@@ -5,7 +5,8 @@ const char name[] = "J.P. Briggs";
 const char * ptrToName = name;
 
 template<typename T>
-void f(T param) {};
+void f(T param)
+{};
 
 template<typename T, std::size_t N>
 constexpr std::size_t arraySize(T(&)[N]) noexcept  // as for arraySize being declared nonexcept, 
