@@ -28,8 +28,27 @@
 #include <iostream>
 #include <string>
 
+struct Vector3
+{
+	float x, y, z;
+};
+
 int main()
 {
+	// stack allocation of an integer
+	int value = 5;
+	// stack allocation of an array
+	int array[5];
+	// stack allocation of a struct
+	Vector3 vector;
+
+	// heap allocation of an integer
+	int* hvalue = new int; // use new keyword to allocate on the heap
+	*hvalue = 5;	
+	// heap allocation of an array
+	int* harray = new int[5];
+	// heap allocation of a struct
+	Vector3* hvector = new Vector3(); // parenthesis optional
 
 	cin.get();
 }
