@@ -33,6 +33,14 @@
 
 void Log(const char* message);
 
+// void Log(const char* message)
+// redefinition of (void Log(const char* message)) will produce:
+// 1>Main.obj : error LNK2005: "void __cdecl Log(char const *)" (?Log@@YAXPBD@Z) already defined in Log.obj
+//                                           tells what function is not defined                     and where it is defined
+{
+	std::cout << message << std::endl;
+}
+
 int main()
 {
 	Log("Hello World!");

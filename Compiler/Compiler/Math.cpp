@@ -17,7 +17,7 @@
 // Debug/Properties/...C++/Optimization/Optimization/Maximize Speed (/O2)
 // And:
 // Debug/Properties/...C++/Code Generation/Basic Runtime Checks/Default - the code that compiler will insert to help us with debugging
-int Mulitply(int a, int b)
+static int Mulitply(int a, int b) // static - this Multiply function is only declared for this translation unit
 {
 	int result = a * b;
 	return result;
@@ -28,3 +28,5 @@ int Multiply()
 {
 	return 5 * 2;
 }
+
+// Debug/Properties/Linker/Advance/Entry Point
