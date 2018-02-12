@@ -31,6 +31,9 @@
 struct Vector3
 {
 	float x, y, z;
+
+	Vector3() :
+		x(10), y(11), z(12) {}
 };
 
 int main()
@@ -39,12 +42,22 @@ int main()
 	int value = 5;
 	// stack allocation of an array
 	int array[5];
+	array[0] = 1;
+	array[1] = 2;
+	array[2] = 3;
+	array[3] = 4;
+	array[4] = 5;
 	// stack allocation of a struct
 	Vector3 vector;
 
 	// heap allocation of an integer
 	int* hvalue = new int; // use new keyword to allocate on the heap
-	*hvalue = 5;	
+	*hvalue = 5;
+	harray[0] = 1;
+	harray[1] = 2;
+	harray[2] = 3;
+	harray[3] = 4;
+	harray[4] = 5;
 	// heap allocation of an array
 	int* harray = new int[5];
 	// heap allocation of a struct
