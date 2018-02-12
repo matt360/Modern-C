@@ -21,7 +21,10 @@
 // It's common to include other .cpp files in other .cpp and create one big .cpp file with a lot of .cpp files in it.
 // Then when you compile that .cpp file containing all other .cpp files you're going to result in one translation unit and thus one object file.
 
-// If you never include any .cpp files in other .cpp files each .cpp file will result in one translation unit and an object file.
+// If you never include any .cpp files in other .cpp files then: eveyr .cpp file will be a tranlation unit and every .cpp file will generate an objet file.
+
+// First stage of compilation: 
+// 1. Pre-processing, commonly used pre-processing statements: #include, #define, #if, #ifdef
 
 // *and Linking:
 
