@@ -4,8 +4,11 @@
 
 #include <iostream>
 
+void Log(const char* message);
+
 int main()
 {
+	Log("Hello World!");
 
-	return 0;
+	std::cin.get();
 }
