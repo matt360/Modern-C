@@ -26,6 +26,7 @@
 // Stack allocation: the stack pointer that is on top of the stack moves: so if I want to allocate an integer (4 bytes), we move the stack pointer 4 bytes. That's it.
 // If I want to allcate an array (5 integers, that's 5 * 4 bytes = 20 bytes), the stack pointer moves 20 bytes, 
 // For Vector3 we have 3 floats (3 * 4 bytes = 12 bytes), we just move the stack pointer 12 bytes. That is it!
+// It's visible in the memory addresses that they're pretty close (int value = 0x010FF758, array = 0x010FF73C, Vector3 = 0x010FF728; these addresses will differ)
 
 // The memory is literally stored on top of each other like a stack.
 // In most stack implementations we actually grow the stack backwards that's why you'll see the higher memory addresses at the higher value
@@ -35,6 +36,19 @@
 
 // Integer allocation, I move the stack pointer backwards 4 bytes and I return that memory address, becasue that is the beginning of my 
 // block of 4 bytes. It's extremly fast.
+
+// Use stack allocation whenever you can. Keep heap allocation for only big chunks of data.
+
+// Main differences between the stack and the heap is the memory allocation:
+// - The Stack is just one CPU instruction
+// - The Heap is a whole bunch or heavy instructions of: when you start your applicaiton you get a certain amout of RAM allocated to you,
+//   the program will maintain something called a free list (which keeps track of which blocks of memory are free and where they are ect.),
+//   requesting memory from the operating system - if you ask for the memory it will go through the free list and give you a block of memory that is at least as big as you've requested - 
+//   which then will give you a pointer to that block of memory and it will keep track of things, such as: a size of the allocation, 
+//   and the fact that it's now allocated, and you can't use that block of memory anymore. There's a bunch of book-keeping going on.
+//   More on malloc: http://gee.cs.oswego.edu/dl/html/malloc.html, https://people.freebsd.org/~jasone/jemalloc/bsdcan2006/jemalloc.pdf
+//   Asking for more memory is really expensive
+
 
 // CODE
 
@@ -56,20 +70,24 @@ struct Vector3
 // In the Memory 1/Address: type: &value to find it's address, or array to find it's address layout
 int main()
 {
-	// stack allocation of an integer
-	int value = 5;
-	// stack allocation of an array
-	int array[5];
-	array[0] = 1;
-	array[1] = 2;
-	array[2] = 3;
-	array[3] = 4;
-	array[4] = 5;
-	// stack allocation of a struct
-	Vector3 vector;
+	{ // if scope is used the stack will get freed once it reaches the end of the scope
+		// stack allocation of an integer
+		int value = 5;
+		// stack allocation of an array
+		int array[5];
+		array[0] = 1;
+		array[1] = 2;
+		array[2] = 3;
+		array[3] = 4;
+		array[4] = 5;
+		// stack allocation of a struct
+		Vector3 vector;
+	}
 
 	// heap allocation of an integer
-	int* hvalue = new int; // use new keyword to allocate on the heap
+	int* hvalue = new int; // use new keyword to allocate on the heap; with smart pointers make_unique, make_shared is exactly the same; it will use 'new' for you
+	                       // new keyword will just call a function called 'malloc' - memory allocate, and what this funciotn will do is usally call the undelying operating system
+	                       // like platform specific function; and that will allocate memory for you on the heap.
 	*hvalue = 5;
 	// heap allocation of an array
 	int* harray = new int[5];
@@ -81,5 +99,8 @@ int main()
 	// heap allocation of a struct
 	Vector3* hvector = new Vector3(); // parenthesis optional
 
+	delete hvalue;
+	delete[] harray;
+	delete hvector;
 	std::cin.get();
 }
