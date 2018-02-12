@@ -27,9 +27,16 @@
 // 1. Pre-processing, commonly used pre-processing statements: #include, #define, #if, #ifdef
 
 // *and Linking:
+// the compiler will link all .obj files and it will also pull any other libraries that we may be using 
+// C runtime library, c++ runtime library and our platform API if necessary. There's also static linking and dynami linking.
+
+// Linkning libraries:
+// - header files contain symbol declarations (e.g. functions)
+// - library files contain symbol definitions (e.g. functions)
 
 
 #include <iostream>
+#include "Log.h"
 
 void Log(const char* message);
 
@@ -37,9 +44,9 @@ void Log(const char* message);
 // redefinition of (void Log(const char* message)) will produce:
 // 1>Main.obj : error LNK2005: "void __cdecl Log(char const *)" (?Log@@YAXPBD@Z) already defined in Log.obj
 //                                           tells what function is not defined                     and where it is defined
-{
-	std::cout << message << std::endl;
-}
+//{
+//	std::cout << message << std::endl;
+//}
 
 int main()
 {
