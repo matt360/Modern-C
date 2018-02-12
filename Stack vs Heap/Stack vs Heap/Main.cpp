@@ -36,6 +36,11 @@ struct Vector3
 		x(10), y(11), z(12) {}
 };
 
+// To DEBUG:
+// Set a breakpoint at 44 (before [int value = 5;]
+// Build and Run
+// Go to Debug/Windows/Memory/Memory 1
+// In the Memory 1/Address: type: &value to find it's address, or array to find it's address layout
 int main()
 {
 	// stack allocation of an integer
@@ -53,15 +58,15 @@ int main()
 	// heap allocation of an integer
 	int* hvalue = new int; // use new keyword to allocate on the heap
 	*hvalue = 5;
+	// heap allocation of an array
+	int* harray = new int[5];
 	harray[0] = 1;
 	harray[1] = 2;
 	harray[2] = 3;
 	harray[3] = 4;
 	harray[4] = 5;
-	// heap allocation of an array
-	int* harray = new int[5];
 	// heap allocation of a struct
 	Vector3* hvector = new Vector3(); // parenthesis optional
 
-	cin.get();
+	std::cin.get();
 }
