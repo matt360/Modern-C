@@ -1,5 +1,11 @@
 // Templates - https://www.youtube.com/watch?v=I-hZkUa9mIs&index=53&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
 
+// WHEN TO USE TEMPLATES?
+// E.G.: 
+// - Login system
+// - Material system (for rendering graphics when you have a uniform buffer that can contain various different types;
+//   templating that to an extent can be extremly useful)
+
 // Templates are a bit like a MACRO - they let you do pretty much anything
 // Template allows you to define a template that will be compiled by your usage
 // You can get the compiler to write code for you based on a set of rules
