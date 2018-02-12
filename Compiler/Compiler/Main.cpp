@@ -15,6 +15,11 @@
 
 // In C++ fiels do not exist (unlike in Java). CPP files are something called translation units.
 // You must tell the compiler what type of file this is and how it should treat it.
+// Files have no menaing. The compiler will treat a file with an extension of .cpp like a C++ file and compile it as such,
+// unless the compiler is told otherwise. 
+// Every .cpp file will be trated as a translation unit by the complier, and the translation unit will become an object (.obj) file.
+// It's common to include other .cpp files in other .cpp and create one big .cpp file with a lot of .cpp files in it.
+// Then when you compile that .cpp file containing all other .cpp files you're going to result in one translation unit and thus one object file.
 
 // *and Linking:
 
