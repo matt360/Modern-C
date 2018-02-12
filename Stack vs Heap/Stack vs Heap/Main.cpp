@@ -23,6 +23,19 @@
 // The way the stack will give us this memory vs the way the heap will give us this memory - that's different.
 // When we ask for the memory like that that's waht we call the memory allocation or just an allocation for short.
 
+// Stack allocation: the stack pointer that is on top of the stack moves: so if I want to allocate an integer (4 bytes), we move the stack pointer 4 bytes. That's it.
+// If I want to allcate an array (5 integers, that's 5 * 4 bytes = 20 bytes), the stack pointer moves 20 bytes, 
+// For Vector3 we have 3 floats (3 * 4 bytes = 12 bytes), we just move the stack pointer 12 bytes. That is it!
+
+// The memory is literally stored on top of each other like a stack.
+// In most stack implementations we actually grow the stack backwards that's why you'll see the higher memory addresses at the higher value
+// in this example: first you'll see the integer, then the array next to the integer, and then the Vector3 next to the array.
+// The idea of a stack is: we literally stack things on top of each other, that's why the stack allocation is extremly fast.
+// literaly one CPU instruction: all we do is we move the stack pointer, and then we return the address of that stack pointer.
+
+// Integer allocation, I move the stack pointer backwards 4 bytes and I return that memory address, becasue that is the beginning of my 
+// block of 4 bytes. It's extremly fast.
+
 // CODE
 
 #include <iostream>
