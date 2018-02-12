@@ -13,6 +13,9 @@
 
 // The compiler creates an obj. file for each of .cpp files
 
+// In C++ fiels do not exist (unlike in Java). CPP files are something called translation units.
+// You must tell the compiler what type of file this is and how it should treat it.
+
 // *and Linking:
 
 
