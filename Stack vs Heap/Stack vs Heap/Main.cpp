@@ -14,3 +14,22 @@
 // Whether it'd be our local variables or we read stuff from a file, we need to store our data; we need a place to store that.
 // The stack and the heap are areas that we're allowed to store data.
 // They work very differently. But fundamentally what they do is the same.
+// We can ask C++ to give us some memory from either the stack or the heap and it will give us a block of memory of our requested size;
+// if everything goes well. 
+
+// The difference is how it allocates that memory.
+// Let's say we want to store an ineger (on most platforms it's 4 bytes)
+// How do we find a contiguous block of 4 bytes of memory (contiguous - means in a row); how do we find this block of 4 bytes of memory?
+// The way the stack will give us this memory vs the way the heap will give us this memory - that's different.
+// When we ask for the memory like that that's waht we call the memory allocation or just an allocation for short.
+
+// CODE
+
+#include <iostream>
+#include <string>
+
+int main()
+{
+
+	cin.get();
+}
