@@ -14,22 +14,61 @@
 
 #include <iostream>
 
-#define LOG(x) std::cout << x << std::endl
+//#define LOG(x) std::cout << x << std::endl
 
-struct Vec2
+//struct Vec2
+//{
+//	float x, y;
+//
+//	void Add(const Vec2& other)
+//	{
+//		x += other.x;
+//		y += other.y;
+//	}
+//};
+
+class Log
 {
-	float x, y;
-
-	void Add(const Vec2& other)
+public:
+	const int LogLevelError = 0;
+	const int LogLevelWarning = 1;
+	const int LogLevelInfo = 2;
+private:
+	// m_* - naming convenction for private members
+	int m_LogLevel = LogLevelInfo;
+public:
+	void SetLevel(int level)
 	{
-		x += other.x;
-		y += other.y;
+		m_LogLevel = level;
+	}
+
+	void Error(const char* message)
+	{
+		if (m_LogLevel >= LogLevelError)
+			std::count << "[ERROR]: " << message << std::endl;
+	}
+
+	void Warn(const char* message)
+	{
+		if (m_LogLevel >= LogLevelWarning)
+			std::count << "[WARNING]: " << message << std::endl;
+	}
+
+	void Info(const char* message)
+	{
+		if (m_LogLevel >= LogLevelInfo)
+			std::count << "[INFO]: " << message << std::endl;
 	}
 };
 
 int main()
 {
-	LOG(5);
+	//LOG(5);
+	
+	Log log;
+	log.SetLevel(log.LogLevelWarning);
+	log.Warn("Hello");
+
 
 	std::cin.get();
 }
