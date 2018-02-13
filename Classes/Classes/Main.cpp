@@ -24,7 +24,7 @@ Inheritance is a way to extend the existing class and provide new funcionality t
 Remember - when you create a sub-class it will contain eveything that your super-class contains.
 Virtual funcitons introduced something called dynamic dispatch which compilers typically implement via V-table.
 A V-table is basically a table that contains a mapping for all of the virtual funcitons inside our base class 
-so we can actually map them to the correct over-written function in our base class.
+so we can actually map them to the correct over-written function at runtime.
 */
 
 // Virtual functions
