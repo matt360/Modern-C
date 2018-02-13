@@ -86,6 +86,14 @@ Singleton* Singleton::s_Instance = nullptr;
 // *other way of doing this:
 class Singleton
 {
+	/*
+	// Ways to not allow for a default constructor
+private:
+	Singleton();
+
+	// or
+	Singleton() = delete;
+	*/
 public:
 	static Singleton& Get() 
 	{
@@ -96,7 +104,7 @@ public:
 		return instance; 
 	}
 
-	void Hello() {}
+	static void Hello() {}
 };
 
 int main()
@@ -110,7 +118,7 @@ int main()
 	Function();
 	Function();
 	Function();
-
+	Singleton s;
 	Singleton::Get().Hello();
 
 	std::cin.get();
