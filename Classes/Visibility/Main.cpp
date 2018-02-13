@@ -1,5 +1,8 @@
 // Visibility
 // Visibility is not visible to the CPU. It's only for humans to write a code that's easier to understand and maintain
+// E.g.: when you mark something 'private' it means that you shouldn't access this from another class. If I've never seen the class
+// before I should be able to say: "Okay, I'm only allowed to touch the public stuff".
+// 
 // CODE
 
 #include <iostream>
