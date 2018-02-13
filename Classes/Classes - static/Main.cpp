@@ -23,6 +23,16 @@ anything inside a class can access a static variable inside this class and anyth
 
 struct Entity
 {
+	// you can have as many constructors as you want. It equivlent to overloading functions.
+	Entity()
+	{
+	}
+
+	Entity(float X, float Y)
+	{
+		x = X;
+		y = Y;
+	}
 	static int x, y;
 
 	static void Print()
