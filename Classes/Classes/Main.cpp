@@ -30,13 +30,22 @@ so we can actually map them to the correct over-written function at runtime.
 // Virtual functions
 /*
 Virtual functions allow us to over-write methods in the sub-classes. 
-class B : public A // B is a sub-class of A
-{};
+class B : public A {}; // B is a sub-class of A
+Virtual functions aren't free: there are two run-time costs associated with virtual functions:
+- Firstly: additinal memory that is required in order for us to store that v-tables so that we can dispatch to the correct function that
+inludes a member pointer in the actual base class that points to the v-table.
+- Secondly: everytime we call a virtual function we have to fo through that table to determine which function to actually map to, which
+is an additional performace penalty.
+Because of those costs some people prefer not to use virtual functions at all. Some use it all the time without any issue.
+Maybe if you're on some embeded platform which has absolutely terrible performance and every CPU cycle counts maybe then avoid virtual fucntions.
+Otherwise it's such a minial impact that you probably won't notice it at all.
 
 class Entity
 {
 public:
-	std::string GetName() { return "Entity"; }
+	// the word 'virtual' tells the compiler to generate a v-table for this function so
+	// if it's overwritten you can point to the correct function
+	virtual std::string GetName() { return "Entity"; }
 };
 
 // Player is a sub-class of Entity class
@@ -47,8 +56,8 @@ private:
 public:
 	Player(const std::string& name)
 		: m_Name(name) {}
-		
-	std::string GetName() { return m_Name; }
+	                   // override is not neccessary but it helps us find bugs (function name spelling errors ect.) 
+	std::string GetName() override { return m_Name; }
 };
 
 void PrintName(Entity* entity)
