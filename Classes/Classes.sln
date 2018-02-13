@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pure virtual functions", "P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Virtual functions", "Virtual functions\Virtual functions.vcxproj", "{844C205B-BCDE-4030-9F82-D6BC5BFE0B8B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Visibility", "Visibility\Visibility.vcxproj", "{2A012CCF-7852-4AC0-A77E-B497B0590168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{844C205B-BCDE-4030-9F82-D6BC5BFE0B8B}.Release|x64.Build.0 = Release|x64
 		{844C205B-BCDE-4030-9F82-D6BC5BFE0B8B}.Release|x86.ActiveCfg = Release|Win32
 		{844C205B-BCDE-4030-9F82-D6BC5BFE0B8B}.Release|x86.Build.0 = Release|Win32
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Debug|x64.ActiveCfg = Debug|x64
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Debug|x64.Build.0 = Debug|x64
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Debug|x86.Build.0 = Debug|Win32
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Release|x64.ActiveCfg = Release|x64
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Release|x64.Build.0 = Release|x64
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Release|x86.ActiveCfg = Release|Win32
+		{2A012CCF-7852-4AC0-A77E-B497B0590168}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
