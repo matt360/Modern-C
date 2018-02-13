@@ -11,7 +11,7 @@ At the end of a day an enum is just an integer.
 
 #include <iostream>
 
-// you can specify what type of integer you want it to be by going, e.g.: enum Name : unsigned char
+// you can specify what type of integer you want it to be by going, e.g.: enum Name : unsigned char (takes 8 bits of memory)	
 enum Example : unsigned char
 {
 	A, B, C

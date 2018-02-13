@@ -30,33 +30,37 @@
 class Log
 {
 public:
-	const int LogLevelError = 0;
-	const int LogLevelWarning = 1;
-	const int LogLevelInfo = 2;
+	// Because it's not an enum class this enum exists inside the Log class namespace
+	enum Level
+	{
+		// common practice - add the name of the enum to the variables inside it to avoid naming conflicts
+		LevelError = 0, LevelWarning, LevelInfo
+	};
 private:
 	// m_* - naming convenction for private members
-	int m_LogLevel = LogLevelInfo;
+	// Using enum restricts it to the integers from that enum (in this case 0, 1, 2)
+	Level m_LogLevel = LevelInfo;
 public:
-	void SetLevel(int level)
+	void SetLevel(Level level)
 	{
 		m_LogLevel = level;
 	}
 
 	void Error(const char* message)
 	{
-		if (m_LogLevel >= LogLevelError)
+		if (m_LogLevel >= LevelError)
 			std::count << "[ERROR]: " << message << std::endl;
 	}
 
 	void Warn(const char* message)
 	{
-		if (m_LogLevel >= LogLevelWarning)
+		if (m_LogLevel >= LevelWarning)
 			std::count << "[WARNING]: " << message << std::endl;
 	}
 
 	void Info(const char* message)
 	{
-		if (m_LogLevel >= LogLevelInfo)
+		if (m_LogLevel >= LevelInfo)
 			std::count << "[INFO]: " << message << std::endl;
 	}
 };
@@ -66,7 +70,7 @@ int main()
 	//LOG(5);
 	
 	Log log;
-	log.SetLevel(log.LogLevelWarning);
+	log.SetLevel(Log::LevelError);
 	log.Warn("Hello");
 
 
