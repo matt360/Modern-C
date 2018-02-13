@@ -80,9 +80,16 @@ A pure virtual function in C++ is essentially the same as an abstract method or 
 Basically a pure virtual function allows us to define a function in a base class that does not have an implementation and then
 force sub-classes to actually implemnt that function.
 
-class Entity
+class Printable
 {
 public:
+	virtual std::string GetClassName() = 0;
+};
+
+class Entity : public Printable
+{
+public:
+	// virtual std::string GetName() = 0;
 	// the word 'virtual' tells the compiler to generate a v-table for this function so
 	// if it's overwritten you can point to the correct function
 	// non pure virtual functions doesn't have to be over-written
@@ -92,7 +99,11 @@ public:
 	// An interface being a class that only consists of unimplemented methods - acting as a template of sorts.
 	// This interface class doens't actually contain method implementations. It's not actually possible for us to 
 	// instantiate that class. 
-	virtual std::string GetName() = 0;
+	// ' = 0' makes it a pure virtual function meaning that it has to be implemented in a sub-class if you want to be able to
+	// instantiate that class.
+	
+	virtual std::string GetName() { return "Entity"; }
+	std::string GetClassName() override { return "Entity"; }
 };
 
 // Player is a sub-class of Entity class
@@ -105,12 +116,26 @@ public:
 		: m_Name(name) {}
 	                   // override is not neccessary but it helps us find bugs (function name spelling errors ect.) 
 	std::string GetName() override { return m_Name; }
+	std::string GetClassName() override { return "Player"; }
 };
 
 void PrintName(Entity* entity)
 {
 	std::cout << entity->GetName() << std::endl;
 }
+
+class A : public Printable
+{
+public:
+
+	std::string GetClassName() override { return "A"; }
+};
+
+void Print(Printable* obj)
+{
+	std::cout << obj->GetClassName() << std::endl;
+}
+
 int mian()
 {
 	Entity* e = new Entity();
@@ -118,6 +143,10 @@ int mian()
 	
 	Player* p = new Player("Player");
 	PrintName(p);
+	
+	Print(e);
+	Print(p);
+	Print(new A); // bad practice - don't write it like this = it's a memory leak
 	
 	std::cin.get();
 }
