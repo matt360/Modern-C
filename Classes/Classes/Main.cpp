@@ -12,6 +12,19 @@
 // structs could be used to hold data, e.g.: struct Vec2 { float x, y; }; You will never use inheritance with structs of data.
 // 
 
+// Inheritance
+/*
+Put all of our common functionality between classes into a parent class. And then simmply make subclasses from that base class.
+We can either change the funconality in ceratian ways or introduce entirely new functionality.
+Inheritance gives us a way to put all of that common code between a number of classes into a base class that we don't have to keep
+repeating ourselves. Kind like a template.
+Class that inherits from a parent is both types.
+Polymorphism - having mulitple types for a single type.
+Inheritance is a way to extend the existing class and provide new funcionality to a base class.
+Remember - when you create a sub-class it will contain eveything that your super-class contains.
+V-table.
+*/
+
 #include <iostream>
 
 //#define LOG(x) std::cout << x << std::endl
