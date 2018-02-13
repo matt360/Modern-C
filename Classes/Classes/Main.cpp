@@ -85,7 +85,14 @@ class Entity
 public:
 	// the word 'virtual' tells the compiler to generate a v-table for this function so
 	// if it's overwritten you can point to the correct function
-	virtual std::string GetName() { return "Entity"; }
+	// non pure virtual functions doesn't have to be over-written
+	// pure virtual functions force the sub-class to provide it's own definition for a certain function.
+	// in OOP it's quite common to create a class that consist only of unimplemented methods and then
+	// force a sub-class to actaully implement them. This is something that is also referred to as an interface. 
+	// An interface being a class that only consists of unimplemented methods - acting as a template of sorts.
+	// This interface class doens't actually contain method implementations. It's not actually possible for us to 
+	// instantiate that class. 
+	virtual std::string GetName() = 0;
 };
 
 // Player is a sub-class of Entity class
