@@ -74,6 +74,47 @@ int mian()
 	
 	std::cin.get();
 }
+
+// Pure virtual function
+A pure virtual function in C++ is essentially the same as an abstract method or an inerface in other languages such as Java or C#.
+Basically a pure virtual function allows us to define a function in a base class that does not have an implementation and then
+force sub-classes to actually implemnt that function.
+
+class Entity
+{
+public:
+	// the word 'virtual' tells the compiler to generate a v-table for this function so
+	// if it's overwritten you can point to the correct function
+	virtual std::string GetName() { return "Entity"; }
+};
+
+// Player is a sub-class of Entity class
+class Player : public Entity // Player is an Entity
+{
+private:
+	std::string m_Name;	
+public:
+	Player(const std::string& name)
+		: m_Name(name) {}
+	                   // override is not neccessary but it helps us find bugs (function name spelling errors ect.) 
+	std::string GetName() override { return m_Name; }
+};
+
+void PrintName(Entity* entity)
+{
+	std::cout << entity->GetName() << std::endl;
+}
+int mian()
+{
+	Entity* e = new Entity();
+	PrintName(e);
+	
+	Player* p = new Player("Player");
+	PrintName(p);
+	
+	std::cin.get();
+}
+
 */
 
 #include <iostream>
