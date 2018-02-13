@@ -22,7 +22,49 @@ Class that inherits from a parent is both types.
 Polymorphism - having mulitple types for a single type.
 Inheritance is a way to extend the existing class and provide new funcionality to a base class.
 Remember - when you create a sub-class it will contain eveything that your super-class contains.
-V-table.
+Virtual funcitons introduced something called dynamic dispatch which compilers typically implement via V-table.
+A V-table is basically a table that contains a mapping for all of the virtual funcitons inside our base class 
+so we can actually map them to the correct over-written function in our base class.
+*/
+
+// Virtual functions
+/*
+Virtual functions allow us to over-write methods in the sub-classes. 
+class B : public A // B is a sub-class of A
+{};
+
+class Entity
+{
+public:
+	std::string GetName() { return "Entity"; }
+};
+
+// Player is a sub-class of Entity class
+class Player : public Entity // Player is an Entity
+{
+private:
+	std::string m_Name;	
+public:
+	Player(const std::string& name)
+		: m_Name(name) {}
+		
+	std::string GetName() { return m_Name; }
+};
+
+void PrintName(Entity* entity)
+{
+	std::cout << entity->GetName() << std::endl;
+}
+int mian()
+{
+	Entity* e = new Entity();
+	PrintName(e);
+	
+	Player* p = new Player("Player");
+	PrintName(p);
+	
+	std::cin.get();
+}
 */
 
 #include <iostream>
