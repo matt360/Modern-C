@@ -90,7 +90,7 @@ force sub-classes to actually implemnt that function.
 class Printable
 {
 public:
-virtual std::string GetClassName() = 0;
+	virtual std::string GetClassName() = 0;
 };
 
 class Entity : public Printable
@@ -109,38 +109,37 @@ public:
 // ' = 0' makes it a pure virtual function meaning that it has to be implemented in a sub-class if you want to be able to
 // instantiate that class.
 
-virtual std::string GetName() { return "Entity"; }
-std::string GetClassName() override { return "Entity"; }
+	virtual std::string GetName() { return "Entity"; }
+	std::string GetClassName() override { return "Entity"; }
 };
 
 // Player is a sub-class of Entity class
 class Player : public Entity // Player is an Entity
 {
 private:
-std::string m_Name;
+	std::string m_Name;
 public:
-Player(const std::string& name)
-: m_Name(name) {}
-// override is not neccessary but it helps us find bugs (function name spelling errors ect.)
-std::string GetName() override { return m_Name; }
-std::string GetClassName() override { return "Player"; }
+	Player(const std::string& name)
+		: m_Name(name) {}
+                       // override is not neccessary but it helps us find bugs (function name spelling errors ect.)
+	std::string GetName() override { return m_Name; }
+	std::string GetClassName() override { return "Player"; }
 };
 
 void PrintName(Entity* entity)
 {
-std::cout << entity->GetName() << std::endl;
+	std::cout << entity->GetName() << std::endl;
 }
 
 class A : public Printable
 {
 public:
-
-std::string GetClassName() override { return "A"; }
+	std::string GetClassName() override { return "A"; }
 };
 
 void Print(Printable* obj)
 {
-std::cout << obj->GetClassName() << std::endl;
+	std::cout << obj->GetClassName() << std::endl;
 }
 
 int main()
