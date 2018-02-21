@@ -13,6 +13,8 @@ References don't reallt occupy memory, they don't really have storage, like a ty
 instead is a reference to a variable.
 
 If you can use a reference instead of a poitner do it.
+
+Once you've created a reference you cannot change what it references.
 */
 
 
@@ -41,6 +43,7 @@ void Increment(int& value)
 
 int main()
 {
+	/*
 	int a = 5;
 	int& ref = a; // reference (alias)
 	ref = 2; // we can use 'ref' as if it was 'a'
@@ -48,6 +51,30 @@ int main()
 	Increment(a);
 
 	LOG(a);
+	*/
 
+	/*
+	// Will not work the way you might think it does
+	// can't change the reference
+	int a = 5;
+	int b = 8;
+
+	int& ref = a;
+	ref = b; // 'a' will be set to the value of 'b', which is 8
+	// a = 8, b = 8
+	*/
+
+	// To do this you'd have to use a pointer:
+	int a = 5;
+	int b = 8;
+
+	int* ref = &a;
+	*ref = 2;       // setting 'a' equal to '2'
+	ref = &b;
+	*ref = 1;       // setting 'b' equal to '1'
+
+	LOG(a);
+	LOG(b);
+	
 	std::cin.get();
 }
