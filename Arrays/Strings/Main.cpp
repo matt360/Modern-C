@@ -56,7 +56,7 @@ int main()
 	strlen(s);
 	name3.size();
 
-	// String literals 
+	// String literals (always stored in read only memory)
 	using namespace std::string_literals;
 
 	std::string sl_name = "Charno"s + " hello!";
@@ -66,7 +66,16 @@ int main()
 
 	const char name6[8] = "Charno"; // char = 1 byte per character (made with UTF-8)
 	const char* name7 = "Charno";
-	const char* name8 = u8"Charno";
+	const char* name8 = R"(Charno // R stands for RAW
+wow
+new 
+lines
+just
+like that
+use R and parantheses
+         spaces will be included too
+					tabs will move it farther
+                    this was made with spaces (same place in the text editor as above))";
 	// name8[2] = 'e'; // error - illegal (some compilers will allow it but some will not) - undefined behaviour
 
 	// wide characters
@@ -76,6 +85,7 @@ int main()
 	const char32_t* name11 = U"Chaerno"; // char32 = 4 bytes per character (made with UTF-32)
 
 	std::cout << strlen(name8) << std::endl;
+	std::cout << name8 << std::endl;
 
 	std::cin.get();
 }
