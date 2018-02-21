@@ -7,6 +7,8 @@ A string is an array of characters (char). An array being a set of elements, so 
 a string of text.
 
 std::string - template specialization of a basic string class with char as a template parameter
+
+string literal - a series of characters inbetween two double qoutes ("text")
 */
 
 
@@ -14,6 +16,12 @@ std::string - template specialization of a basic string class with char as a tem
 
 #include <iostream>
 #include <string>
+
+// read only funciton - pass by const reference; reference - won't get copied; const - no changes to the string will be made
+void PrintString(const std::string& string)
+{
+	std::cout << string << std::endl;
+}
 
 int main()
 {
@@ -40,9 +48,14 @@ int main()
 	bool contains = name4.find("no") != std::string::npos; // npos - illegal position
 	std::cout << contains << std::endl;
 
+	PrintString(name4);
+
 	const char* s = "";
 	strlen(s);
 	name3.size();
+
+	// String literals 
+
 
 	std::cin.get();
 }
