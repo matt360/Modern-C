@@ -11,6 +11,8 @@ References are not new variables, they have to reference an already existing var
 
 References don't reallt occupy memory, they don't really have storage, like a typicall variable, becasue what they are, 
 instead is a reference to a variable.
+
+If you can use a reference instead of a poitner do it.
 */
 
 
