@@ -84,5 +84,7 @@ int main()
 	//d = (int*)&MAX_AGE; // and can't reassing the actual pointer iteself to point to something else
 	std::cout << "x " << *x << std::endl;
 
+	Entity* z = new Entity[50]; // 50 class instances in a row (in the memory)
+
 	std::cin.get();
 }
