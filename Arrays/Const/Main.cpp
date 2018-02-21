@@ -60,7 +60,7 @@ int main()
 	// const int* (const before the asterisk - can't change the content of the pointer) 
 	//const int MAX_AGE = 90;
 	const int* b = new int;
-	int const* d = new int(2);
+	int const* d = new(a) int(2); // init d in the specific memory location of a
 	//*b = 2; // error - const int* - can't change the content of this pointer so the data at that memory address
 	//*d = 2; // error - const int* - can't change the content of this pointer so the data at that memory address
 	std::cout << "d " << *d << std::endl;
@@ -84,7 +84,12 @@ int main()
 	//d = (int*)&MAX_AGE; // and can't reassing the actual pointer iteself to point to something else
 	std::cout << "x " << *x << std::endl;
 
+	// new keyword - allocates the memory and calls the constructor
 	Entity* z = new Entity[50]; // 50 class instances in a row (in the memory)
+	Entity* zz = (Entity*)malloc(sizeof(Entity)); // doesn't call the class constructor, just allocates the memory
+
+	delete[] z; // delete keyword calls the class destructor; if you allocate with [], delete with []
+	delete zz;
 
 	std::cin.get();
 }
