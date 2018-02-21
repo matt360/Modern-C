@@ -17,6 +17,8 @@ string literal - a series of characters inbetween two double qoutes ("text")
 #include <iostream>
 #include <string>
 
+#include <stdlib.h>
+
 // read only funciton - pass by const reference; reference - won't get copied; const - no changes to the string will be made
 void PrintString(const std::string& string)
 {
@@ -55,7 +57,25 @@ int main()
 	name3.size();
 
 	// String literals 
+	using namespace std::string_literals;
 
+	std::string sl_name = "Charno"s + " hello!";
+	std::string sl_name1 = u8"Charno"s + " hello!";
+	std::wstring sl_name2 = L"Charno"s + L" hello!";
+	std::u32string sl_name3 = U"Charno"s + U" hello!";
+
+	const char name6[8] = "Charno"; // char = 1 byte per character (made with UTF-8)
+	const char* name7 = "Charno";
+	const char* name8 = u8"Charno";
+	// name8[2] = 'e'; // error - illegal (some compilers will allow it but some will not) - undefined behaviour
+
+	// wide characters
+	const wchar_t* name9 = L"Chaerno"; // wchar_t = 2 bytes per character [4 bytes on Linux and Mac - up to the compiler to decide]
+
+	const char16_t* name10 = u"Chaerno"; // char16 = 2 bytes per character (made with UTF-16) [4 bytes on Linux and Mac]
+	const char32_t* name11 = U"Chaerno"; // char32 = 4 bytes per character (made with UTF-32)
+
+	std::cout << strlen(name8) << std::endl;
 
 	std::cin.get();
 }
