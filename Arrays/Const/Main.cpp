@@ -15,26 +15,42 @@ It's a promise that something is not going to change.
 class Entity
 {
 private:
-	int m_X, m_Y;
-	int *m_p_X;
+	int m_X; // m_X is a variable
+	int *m_pX, m_Y; // m_pX is a pointer, m_Y is a variable
+	int *m_pZ, *m_pW; // m_pZ is a pointer, m_pW is a pointer
+	mutable int var;
 
 public:
 	// const after the parameter list/method name (only works in a class), means this method is not going to modify any of the actual class
-	int GetX() const  
+	int GetX() const  // always mark the methods as const if they don't modify the class or are not supposed to modify it
 	{
 		//m_X = 2; // error - method can't modify the class
+		var = 2; // var is mutable, mutable allows methods which are const to modify the variable
 		return m_X;
 	}
 
 	// return a pointer that's can't be modified, the contents of the pointer can't be modified and the function will not modify the class
 	const int* const GetPX() const 
 	{
-		return m_p_X;
+		return m_pX;
+	}
+
+	void SetX(int x)
+	{
+		m_X = x;
 	}
 };
 
+// this function is passing by const reference so it can only cal  const methods that don't change the class
+void PrintEntity(const Entity& e)
+{
+	std::cout << e.GetX() << std::endl;
+}
+
 int main()
 {
+	Entity e;
+
 	const int MAX_AGE = 90;
 	int* a = new int;
 	*a = 2;
@@ -63,10 +79,10 @@ int main()
 
 	// const int* const
 	//const int MAX_AGE = 90;
-	const int* const e = new int;
+	const int* const x = new int;
 	//*d = 2; // int* const - can change the content
 	//d = (int*)&MAX_AGE; // and can't reassing the actual pointer iteself to point to something else
-	std::cout << "e " << *e << std::endl;
+	std::cout << "x " << *x << std::endl;
 
 	std::cin.get();
 }
