@@ -12,6 +12,27 @@ It's a promise that something is not going to change.
 
 #include <iostream>
 
+class Entity
+{
+private:
+	int m_X, m_Y;
+	int *m_p_X;
+
+public:
+	// const after the parameter list/method name (only works in a class), means this method is not going to modify any of the actual class
+	int GetX() const  
+	{
+		//m_X = 2; // error - method can't modify the class
+		return m_X;
+	}
+
+	// return a pointer that's can't be modified, the contents of the pointer can't be modified and the function will not modify the class
+	const int* const GetPX() const 
+	{
+		return m_p_X;
+	}
+};
+
 int main()
 {
 	const int MAX_AGE = 90;
