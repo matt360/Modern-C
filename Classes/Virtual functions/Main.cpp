@@ -69,6 +69,99 @@ void PrintName(Entity* entity)
 	std::cout << entity->GetName() << std::endl;
 }
 
+// Virtual destructor
+// Deleting a derived class using a pointer of the base class, which doesn't have a virtual destructor, results in undefined behaviour.
+/*
+class Base
+{
+public:
+Base()
+{
+std::cout << "Constructing base" << std::endl;
+}
+
+~Base()
+{
+std::cout << "Destructing base" << std::endl;
+}
+};
+
+class Derived : public Base
+{
+public:
+Derived()
+{
+std::cout << "Constructing derived" << std::endl;
+}
+
+~Derived()
+{
+std::cout << "Destructing derived" << std::endl;
+}
+};
+
+int main()
+{
+	Derived* d = new Derived();
+	Base* b = d;
+	delete b;
+}
+*/
+// The output may differ on different compilers but here it would be:
+/*
+Constructing base
+Constructing derived
+Destructing base
+*/
+// Only one destructor was called from the derived class. To prevent this use virtual destructors in the base class.
+
+// A program with virtual destructor
+// Making base class destructor virtual guarantees that both base class and derived class destructors are called, hence
+// The derived class is destructed properly.
+class Base
+{
+public:
+	Base()
+	{
+		std::cout << "Constructing base" << std::endl;
+	}
+
+	virtual ~Base()
+	{
+		std::cout << "Destructing base" << std::endl;
+	}
+};
+
+class Derived : public Base
+{
+public:
+	Derived()
+	{
+		std::cout << "Constructing derived" << std::endl;
+	}
+
+	~Derived()
+	{
+		std::cout << "Destructing derived" << std::endl;
+	}
+};
+
+/*
+int main()
+{
+	Derived* d = new Derived();
+	Base* b = d;
+	delete b;
+}
+*/
+// The output may differ on different compilers but here it would be:
+/*
+Constructing base
+Constructing derived
+Destructing derived
+Destructing base
+*/
+
 int main()
 {
 	Entity* e = new Entity();
@@ -76,6 +169,11 @@ int main()
 	
 	Player* p = new Player("Player");
 	PrintName(p);
-	
+
+	// Virtual destructor
+	Derived* d = new Derived();
+	Base* b = d;
+	delete b;
+
 	std::cin.get();
 }
