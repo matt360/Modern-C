@@ -28,7 +28,7 @@ struct Vector2
 		return Add(other);
 	}
 
-	Vector2 Multiply(const Vector2& other) const // const since it's not going to modify the contents of the vector - it will create a new class
+	Vector2 Multiply(const Vector2& other) const // const - since we're not going to modify the contents of the class
 	{
 		return Vector2(x * other.x, y * other.y);
 	}
@@ -38,9 +38,18 @@ struct Vector2
 		return Multiply(other);
 	}
 	
+	bool operator==(const Vector2& other) const
+	{
+		return x == other.x && y == other.y;
+	}
 
+	bool operator!=(const Vector2& other) const
+	{
+		return !(*this == other);
+		//return !operator==(other); // the same as above
+	}
 	/*
-	Vector2 Add(const Vector2& other) const // const since it's not going to modify the contents of the vector - it will create a new class
+	Vector2 Add(const Vector2& other) const // const - since we're not going to modify the contents of the class
 	{
 		//return *this + other;
 		return operator+(other);
@@ -80,6 +89,11 @@ int main()
 	Vector2 result2 = position + speed * powerup;
 
 	std::cout << result2 << std::endl;
+
+	if (result1 == result2)
+	{
+
+	}
 
 	std::cin.get();
 }
