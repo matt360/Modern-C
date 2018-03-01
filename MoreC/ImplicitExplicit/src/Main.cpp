@@ -13,12 +13,13 @@ public:
 
 	Entity(int age) :
 		m_Name("unknows"), m_Age(age) {}
-
+	
 	/*
 	// explicit - block implicit conversion of the constructor
 	explicit Entity(int age) :
 		m_Name("unknows"), m_Age(age) {}
 	*/
+	
 };
 
 void PrintEntity(const Entity& entity)
@@ -50,6 +51,7 @@ int main()
 	Entity e = (Entity)22;
 	Entity f = Entity(22);
 
+	// good for explicit because we're building an object
 	PrintEntity(Entity("Cherno"));
 
 	std::cin.get();
