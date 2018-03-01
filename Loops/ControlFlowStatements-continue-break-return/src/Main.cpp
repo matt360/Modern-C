@@ -17,6 +17,7 @@ int main()
 	bool condition = true;
 
 	// continue
+	std::cout << "continue" << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
 		if (i % 2 == 0)
@@ -27,6 +28,7 @@ int main()
 
 	std::cout << "======================" << std::endl;
 
+	std::cout << "continue" << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
 		if (i > 2) // will stop incrementing 'i' when 'i' is bigger than 2 so it's going to print out 0, 1, 2 (if (2 > 2) is false)
@@ -38,41 +40,25 @@ int main()
 	std::cout << "======================" << std::endl;
 
 	// break
+	std::cout << "break" << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
-		if (i % 2 == 0)
-			continue;
+		if ((i + 1) % 2 == 0) //
+			break;
 		std::cout << "Hello World!" << std::endl;
 		std::cout << i << std::endl;
 	}
 
 	std::cout << "======================" << std::endl;
 
+	// return
+	std::cout << "return" << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
-		if (i > 2) // will stop incrementing 'i' when 'i' is bigger than 2 so it's going to print out 0, 1, 2 (if (2 > 2) is false)
-			continue;
+		if ((i + 1) % 2 == 0) //
+			return 0;
 		std::cout << "Hello World!" << std::endl;
 		std::cout << i << std::endl;
-	}
-
-	std::cout << "======================" << std::endl;
-
-	// do while
-	condition = false;
-
-	// will execute at least once
-	do
-	{
-		std::cout << "Hello World!" << std::endl;
-	} while (condition);
-
-	std::cout << "======================" << std::endl;
-
-	// while loop will not execute at all
-	while (condition)
-	{
-		std::cout << "Hello World!" << std::endl;
 	}
 
 	std::cin.get();
