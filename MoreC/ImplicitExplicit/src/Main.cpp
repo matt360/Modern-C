@@ -8,11 +8,11 @@ private:
 	int m_Age;
 
 public:
-	Entity(const std::string& name) :
-		m_Name(name), m_Age(-1) {}
+	Entity(const std::string& name)
+		: m_Name(name), m_Age(-1) {}
 
-	Entity(int age) :
-		m_Name("unknows"), m_Age(age) {}
+	Entity(int age)
+		: m_Name("unknows"), m_Age(age) {}
 	
 	/*
 	// explicit - block implicit conversion of the constructor
