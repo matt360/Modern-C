@@ -11,10 +11,8 @@ the method; so the method has to be called with a valid object, and 'this', the 
 #include <iostream>
 #include <string>
 
-void PrintEntity()
-{
-
-}
+void PrintEntity(Entity* e);
+void PrintEntity(const Entity& e);
 
 class Entity
 {
@@ -29,18 +27,34 @@ public:
 		//(*this).x = x;
 		this->x = x;
 		this->y = y;
+
+		PrintEntity(this);  // passing Entity by a pointer (Entity* e)
+		PrintEntity(*this); // passing Entity by a const reference (const Entity& e)
 	}
+
 
 	int GetX() const
 	{
 		const Entity* e = this;
+		const Entity& e = *this;
 
 		return x;
 	}
 };
+
+void PrintEntity(Entity* e)
+{
+
+}
+
+void PrintEntity(const Entity& e)
+{
+
+}
 
 int main()
 {
 	
 	std::cin.get();
 }
+
