@@ -11,6 +11,34 @@ the method; so the method has to be called with a valid object, and 'this', the 
 #include <iostream>
 #include <string>
 
+void PrintEntity()
+{
+
+}
+
+class Entity
+{
+public:
+	int x, y;
+
+	Entity(int x, int y)
+	{
+		Entity* e = this;
+
+		//e->x = x;
+		//(*this).x = x;
+		this->x = x;
+		this->y = y;
+	}
+
+	int GetX() const
+	{
+		const Entity* e = this;
+
+		return x;
+	}
+};
+
 int main()
 {
 	
