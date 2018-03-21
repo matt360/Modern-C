@@ -8,7 +8,6 @@ struct Vector3
 
 int main()
 {
-	//int offset = (int)&((Vector3*)0)->x;
 	int offset_x = (int)&((Vector3*)0)->x;
 	int offset_y = (int)&((Vector3*)NULL)->y;
 	int offset_z = (int)&((Vector3*)nullptr)->z;
@@ -17,4 +16,6 @@ int main()
 	std::cout << offset_z << std::endl;
 
 	std::cin.get();
+
+	return (int)&((Vector3*)0)->x;
 }
