@@ -53,9 +53,10 @@ static void Print(Entity e)
 /*
 STATIC VARIABLES INSIDE A FUNCTION
 Declaring a static variable inside a function is very similar to declaring it outside the function, like this:
-int i = 0; // in this sense it doesn't matter if it's static or not (Making it static it would mean that it's going to be avaiable in this entire .cpp file)
-           // if you want a similar behaviour to declaring the variable outside the function but you don't want to give an access to it to everyone you can just declare it
-		   // static in a local scope
+int i = 0; // in this sense it doesn't matter if it's static or not 
+           // (Making it static it would mean that it's going to be avaiable in this entire .cpp file)
+           // if you want a similar behaviour to declaring the variable outside the function but you don't want to give an access to it to everyone 
+		   // you can just declare it static in a local scope
 */
 void Function()
 {
@@ -103,8 +104,10 @@ public:
 		return instance; 
 	}
 
-	static void Hello() {}
+	static void Hello() { std::cout << "Singleton memory address: " << &Get() << std::endl; }
 };
+
+
 
 int main()
 {
@@ -112,12 +115,14 @@ int main()
 	Entity::y = 8;
 	Entity::Print();
 
-	Function();
-	Function();
-	Function();
-	Function();
-	Function();
+	Function(); // i = 1
+	Function(); // i = 2
+	Function(); // i = 3
+	Function(); // i = 4
+	Function(); // i = 5
 	Singleton s;
+	Singleton::Get().Hello();
+	Singleton::Get().Hello();
 	Singleton::Get().Hello();
 
 	std::cin.get();
