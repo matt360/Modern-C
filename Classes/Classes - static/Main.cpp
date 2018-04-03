@@ -104,10 +104,37 @@ public:
 		return instance; 
 	}
 
-	static void Hello() { std::cout << "Singleton memory address: " << &Get() << std::endl; }
+	void Hello() { std::cout << "Singleton memory address: " << &Get() << std::endl; }
 };
 
+// Singleton is a class that should only have one instance in existance
+class MySingleton
+{
+private:
+	static MySingleton* instance;
 
+public:
+	static MySingleton& Get() { return *instance; } // get MyInstance by reference
+	
+	void Hello() { std::cout << "MySingleton address: " << &instance << std::endl; } // address of the pointer
+};
+
+MySingleton* MySingleton::instance = NULL;
+
+class MySimpleSingleton
+{
+public:
+	static MySimpleSingleton Get()
+	{
+		static MySimpleSingleton mySimpleSingleton;
+		return mySimpleSingleton;
+	}
+
+	void Hello()
+	{
+		std::cout << "MySimpleSingleton address: " << &MySimpleSingleton::Get() << std::endl;
+	}
+};
 
 int main()
 {
@@ -120,10 +147,16 @@ int main()
 	Function(); // i = 3
 	Function(); // i = 4
 	Function(); // i = 5
-	Singleton s;
+	//Singleton s;
 	Singleton::Get().Hello();
 	Singleton::Get().Hello();
 	Singleton::Get().Hello();
+
+	MySingleton::Get().Hello();
+	MySingleton::Get().Hello();
+
+	MySimpleSingleton::Get().Hello();
+	MySimpleSingleton::Get().Hello();
 
 	std::cin.get();
 }
