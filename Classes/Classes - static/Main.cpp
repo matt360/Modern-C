@@ -1,6 +1,6 @@
 /*
 Static method does not have a class instance.
-Every non-static method that you write insde the class always gets an instance of the current class as a parameter.
+Every non-static method that you write inside the class always gets an instance of the current class as a parameter.
 That's how classes actually work behind the scenes. There's no such thing as a class. They're just functions with a hidden parameter of sorts.
 A static method does not get that hidden parameter. A static method is the same as if you wrote a method outside the class.
 
@@ -8,12 +8,11 @@ Static is incredibly usefull for static data, data that does not change between 
 
 2 things to consider when making a static variable:
 - LIFE TIME - how long the variable will stick around for - in other words how long it will remain in the memory before it gets deleted.
-- SCOPE - where we can actually access that variable. So if we declare a variable inside a function we can't access it another function becasue the variable that we declared
-is going to be local to the function we declared it in.
+- SCOPE - where we can actually access that variable. So if we declare a variable inside a function we can't access it with another function because the variable that we declared is going to be local to the function we declared it in.
 
 Static local variable inside a function - lasts for the entire program, but is accessible only inside that funciton (the scope could be something else that a function; could be anything:
 like an IF statement ect. That's why there's not much difference between a static variable in a function scope vs a static variable in a class scope: 
-anything inside a class can access a static variable inside this class and anything inside a function can access a static varaible inside that function. 
+anything inside a class can access a static variable inside that class and anything inside a function can access a static varaible inside that function. 
 */
 
 
