@@ -7,9 +7,27 @@
 //
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
+
+template<typename T, typename Container = std::vector<T> >
+void RemoveElementFromVector(Container& dynamic_array, T value)
+{
+    dynamic_array.erase(std::remove(dynamic_array.begin(), dynamic_array.end(), value), dynamic_array.end());
+}
+
+template<typename T>
+std::ostream& operator<<(std::ostream& stream, const std::vector<T>& other)
+{
+    for (auto c : other)
+        stream << c << " ";
+    
+    return stream;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    std::vector<unsigned> dynamic_array { 1, 2, 3, 3, 4, 5 };
+    RemoveElementFromVector(dynamic_array, 3);
+    
+    std::cout << dynamic_array;
 }
