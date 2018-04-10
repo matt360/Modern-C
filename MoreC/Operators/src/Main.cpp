@@ -14,18 +14,18 @@ struct Vector2
 	Vector2(float x, float y)
 		: x(x), y(y) {}
 
-	
+
 	Vector2 Add(const Vector2& other) const // const since it's not going to modify the contents of the vector - it will create a new class
 	{
 		return Vector2(x + other.x, y + other.y);
 	}
 
 	// operator overloading - the way we define this is just like any other function
-	// we write the return type, instead of the function name we write the word 'operator' and the sign we want to overload, 
+	// we write the return type, instead of the function name we write the word 'operator' and the sign we want to overload,
 	// we open up the parantheses and pass the parameter
 	Vector2	operator+(const Vector2& other) const
 	{
-		return Add(other);
+        return Add(other);
 	}
 
 	Vector2 Multiply(const Vector2& other) const // const - since we're not going to modify the contents of the class
@@ -37,12 +37,12 @@ struct Vector2
 	{
 		return Multiply(other);
 	}
-	
+
 	bool operator==(const Vector2& other) const
 	{
 		return x == other.x && y == other.y;
 	}
-
+	
 	bool operator!=(const Vector2& other) const
 	{
 		return !(*this == other);
