@@ -24,11 +24,12 @@ int main()
 	// that is covering the defintion and initialization of 'i' and 's'
 	auto [i1, s1, d1, c1, c2, f1, u1] = returnMultipleValues();
 
-	std::cout << "i: " << i1  - 1 << std::endl;
+	std::cout << "auto [i1, s1, d1, c1, c2, f1, u1] = "
+	          << i1 << " " << s1 << " " << d1 << " " << c1 << " " << c2 << " " << f1 << " " << u1 <<  std::endl;
 
 	std::tuple<int, bool, float> result = foo();
 	int value = std::get<0>(result);
-	std::cout << std::get<2>(result);
+	std::cout << "value: " << value << " value1: " << std::get<1>(result) << " value2: " << std::get<2>(result);
 
 	int i;
 	bool b;

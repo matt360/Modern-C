@@ -75,7 +75,7 @@ like that
 use R and parantheses
          spaces will be included too
 					tabs will move it farther
-                    this was made with spaces (same place in the text editor as above))";
+                    this was made with spaces (different place in the terminal than above))";
 	// name8[2] = 'e'; // error - illegal (some compilers will allow it but some will not) - undefined behaviour
 
 	// wide characters
