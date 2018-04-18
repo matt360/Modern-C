@@ -4,18 +4,33 @@
 - 
 */
 
+#include <tuple>
 #include <iostream>
+#include <string>
 
-int getTwoReturnValues()
+std::tuple<int, std::string> returnMultipleValues()
 {
-	int a = 0, b = 0;
-	return a, b;
+	//return std::make_tuple(1, "Soni", 2.4, 'a'); // Always works
+	return { 1, "Soni" }; // C++ 17
+}
+
+std::tuple<int, bool, float> foo()
+{
+	return { 128, true, 1.5f };
 }
 
 int main()
 {
-	int a, b;
-	//auto[a, b] = getTwoReturnValues();
+	int i;
+	std::string s;
 
+	auto [i, s] = returnMultipleValues();
 
+	std::cout << "i " << i;
+
+	std::tuple<int, bool, float> result = foo();
+	int value = std::get<0>(result);
+	auto[value1, value2, value3] = foo();
+
+	std::cin.get();
 }
