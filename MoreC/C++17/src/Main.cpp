@@ -8,28 +8,33 @@
 #include <iostream>
 #include <string>
 
-std::tuple<int, std::string> returnMultipleValues()
+std::tuple<int, std::string, double, char, char, float, unsigned> returnMultipleValues()
 {
 	//return std::make_tuple(1, "Soni", 2.4, 'a'); // Always works
-	return { 1, "Soni" }; // C++ 17
+	return { 1, "String", 2.0, 'a', 'b', 1.0, 0 }; // C++ 17
 }
 
 std::tuple<int, bool, float> foo()
 {
-	return { 128, true, 1.5f };
+	return std::make_tuple(1, true, 1.0);
 }
 
 int main()
 {
-	int i;
-	std::string s;
+	// that is covering the defintion and initialization of 'i' and 's'
+	auto [i1, s1, d1, c1, c2, f1, u1] = returnMultipleValues();
 
-	auto [i, s] = returnMultipleValues();
-
-	std::cout << "i " << i;
+	std::cout << "i: " << i1  - 1 << std::endl;
 
 	std::tuple<int, bool, float> result = foo();
 	int value = std::get<0>(result);
+	std::cout << std::get<2>(result);
+
+	int i;
+	bool b;
+	float f;
+	std::tie(i, b, f) = foo();
+
 	auto[value1, value2, value3] = foo();
 
 	std::cin.get();
