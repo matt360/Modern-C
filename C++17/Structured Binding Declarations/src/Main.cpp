@@ -1,7 +1,7 @@
 // C++17
 /*
 - Template deduction of constructors, allowing std::pair(5.0, false) instead of std::pair<double,bool>(5.0, false)
-- 
+- link: https://www.bfilipek.com/2017/07/cpp17-details-simplifications.html#init-statement-for-ifswitch
 */
 
 #include <tuple>

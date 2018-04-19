@@ -6,7 +6,7 @@ int main()
 
 	// C++17
 	if (const auto it = myString.find(" "); it != std::string::npos)
-		std::cout << "Found a space on the " << it << "th place" << std::endl;
+		std::cout << "Space found! Index number: " << it << std::endl;
 	else
 		std::cout << "Space not found!" << std::endl;
 
