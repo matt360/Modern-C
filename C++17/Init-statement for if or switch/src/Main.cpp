@@ -18,7 +18,7 @@ int main()
 		std::cout << "Space not found!" << std::endl;
 
 	// C++ 17
-	if (const auto it = myString.find_first_of(" "); it != std::string:npos)
+	if (const auto it = myString.find_first_of(" "); it != std::string::npos)
 		std::cout << "First space found! Index number: " << it << std::endl;
 
 	std::cin.get();
