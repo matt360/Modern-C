@@ -25,7 +25,7 @@ auto& get(S& s)
 
 int main()
 {
-	S s(1, "Cat", 2.0);
+	S s(1, "Hello", 2.0);
 	std::cout << get<0>(s);
 	
 	std::cin.get();
