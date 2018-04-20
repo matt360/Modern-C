@@ -1,11 +1,11 @@
 #include <iostream>
 
 // C++14
-template <typename T, T value> T f()
+template <typename T, T value> 
+T f()
 {
 	return value * 2;
 }
-
 
 int main()
 {
