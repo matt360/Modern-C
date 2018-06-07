@@ -44,23 +44,23 @@ void g(X&& t) { std::cout << "rvalue" << std::endl; };
 template<typename T>
 void f(T&& t)
 {
-	std::cout << "template function calling: g(t) ";
+	std::cout << "template function calling: g(t) and t is ";
 	g(t);
 
-	std::cout << "template function calling: g(std::forward<T>(t)) ";
+	std::cout << "template function calling: g(std::forward<T>(t)) and t is ";
 	g(std::forward<T>(t));
 }
 
 // overload
 void h(X& t)
 {
-	std::cout << "overloaded function calling: g(std::forward<X>(t)) ";
-	g(std::forward<X>(t));
+	std::cout << "overloaded function calling: g(t) and t is ";
+	g(t);
 }
 
 void h(X&& t)
 {
-	std::cout << "overloaded function calling: g(std::forward<X>(t)) ";
+	std::cout << "overloaded function calling: g(std::forward<X>(t)) and t is ";
 	g(std::forward<X>(t));
 }
 
@@ -77,11 +77,12 @@ int main()
 	X x3(std::move(x1)); // no copy, move: x1 no longer has any data
 
 	std::cout << "X make_x; ";
-	X make_x(); // build an X with data
+	X make_x; // build an X with data
 	std::cout << "x1 = make_x; ";
-	x1 = make_x(); // return value is an rvalue, so move rather than copy
+	x1 = make_x; // return value is an rvalue, so move rather than copy
 
 	// perfect forwarding
+	std::cout << "X x; ";
 	X x;
 
 	std::cout << std::endl;
