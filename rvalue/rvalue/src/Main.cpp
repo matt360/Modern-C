@@ -41,4 +41,5 @@ int main()
 	x1 = make_x; // return value is an rvalue, so move rather than copy
 
 	std::cin.get();
+	
 }
