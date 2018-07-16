@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 #include <any>
-//#include <optional>
-//#include <variant>
 #include <map>
 
 // source code: https://www.bfilipek.com/2018/06/any.html?m=1
