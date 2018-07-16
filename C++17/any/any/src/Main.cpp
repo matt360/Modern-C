@@ -10,10 +10,14 @@
 int main()
 {
 	std::any a(12);
+	std::any b(22);
+	std::any c;
+	
 
 	// set any value
 	a = std::string("Hello");
 	a = 16;
+	a.std::any::swap(b);
 
 	// reading the value:
 	// we can read it as int ->
@@ -22,6 +26,7 @@ int main()
 	// -> but not as string
 	try
 	{
+		// access the value by using std::any_cast<T>, it will throw bad_any_cast if the active type is not T.
 		std::cout << std::any_cast<std::string>(a) << '\n';
 	}
 	catch(const std::bad_any_cast& e)
@@ -30,7 +35,7 @@ int main()
 	}
 
 	// reset and check if it contains any value
-	a.reset();
+	a.reset(); // .reset() - destroys contained	object
 	if (!a.has_value())
 	{
 		std::cout << "a is empty!" << "\n";
@@ -44,6 +49,7 @@ int main()
 
 	for (auto& [key, value] : m)
 	{
+		// you can discover the active type by using .type() that returns std::type_info of the type.
 		if (value.type() == typeid(int))
 			std::cout << "int: " << std::any_cast<int>(value) << "\n";
 		else if (value.type() == typeid(std::string))
