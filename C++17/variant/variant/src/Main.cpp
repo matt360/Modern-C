@@ -2,7 +2,7 @@
 #include <iostream>
 #include <variant>
 
-// souce code: https://www.bfilipek.com/2018/06/variant.html
+// source code: https://www.bfilipek.com/2018/06/variant.html
 
 struct SampleVisitor
 {
@@ -32,24 +32,24 @@ int main()
 	intFloatString = "hello super world";
 	std::cout << "index = " << intFloatString.index() << std::endl;
 
-	// try with get_if:
+	// try with get_if
 	if (const auto intPtr(std::get_if<int>(&intFloatString)); intPtr)
 		std::cout << "int!" << *intPtr << "\n";
 	else if (const auto floatPtr(std::get_if<float>(&intFloatString)); floatPtr)
-		std::cout << "float!" << *floatPtr << "\n";
+		std::cout << "flaot!" << *floatPtr << "\n";
 
 	if (std::holds_alternative<int>(intFloatString))
 		std::cout << "the variant holds an int!\n";
 	else if (std::holds_alternative<float>(intFloatString))
-		std::cout << "the variant holds a float\n";
+		std::cout << "the variant holds a float!\n";
 	else if (std::holds_alternative<std::string>(intFloatString))
-		std::cout << "the variant holds a string\n";
+		std::cout << "the variant holds a string!";
 
 	// try/catch and bad_variant_access
 	try
 	{
 		auto f = std::get<float>(intFloatString);
-		std::cout << "float! " << f << "\n";
+		std::cout << "float!" << f << "\n";
 	}
 	catch (std::bad_variant_access&)
 	{
