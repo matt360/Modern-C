@@ -41,11 +41,18 @@ std::cin.get();
 #define LOG(x)
 #endif
 
-int main()
-{
-	#if 1
-	LOG("Hello")
-
-	WAIT
-	#endif
+#define MAIN int main() \
+{\
+	std::cin.get();\
 }
+
+//int main()
+//{
+//	#if 1
+//	LOG("Hello")j
+//
+//	WAIT
+//	#endif
+//}
+
+MAIN
