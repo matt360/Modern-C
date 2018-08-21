@@ -39,8 +39,8 @@ public:
 	}
 
 private:
-	// declare copy constructor and assignment operator private to prevent the compiler from
-	// creating its own and from using them.
+	// declare the copy constructor and the assignment operator yourself to prevent the compiler from creating its own
+ 	// and declare them private so the user can't use them.
 	Empty(const Empty& rhs) {}
 	Empty& operator=(const Empty&rhs)
 	{
