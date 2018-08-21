@@ -22,6 +22,12 @@ p. 28 - For built-in types there's no guarantee it was initialized at all prior 
 p. 30 - A translation unit is the source code giving rise to a signle object file. It's basically a single source file,
 		plus all of its #include files.
 
+p. 42 - Chapter 2 - Item 7 - Virtual Table Pointer - Virtual Table - Virtual Functions - Each class with virtual functions
+		has an associated virtual table. If a class contains a virtual functions it will increase in size by 50% to 100%!
+		To avoid undesired size bloating declare a virtual destructor in a class only if that class contains at least
+		one virtual function.
+
+
 p. 89 - If you peek under the hood of a C++ compiler, you'll find that references are typically implemented as pointers,
 		so passing something by reference usually means really possing a pointer.
 
