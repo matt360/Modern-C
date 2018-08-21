@@ -15,18 +15,30 @@ class Empty
 // so it will looks like this:
 */
 
-class Empty
+class Uncopyable
+{
+protected:
+	Uncopyable() {}
+	~Uncopyable() {}
+private:
+	// copy constructor
+	Uncopyable(const Uncopyable&);
+	// assignment operator
+	Uncopyable operator=(const Uncopyable&);
+};
+
+class Empty : private Uncopyable
 {
 public:
 	Empty() {}                               // default constrctor
-	Empty(const Empty& rhs) {}               // default copy constructor
+	//Empty(const Empty& rhs) {}               // default copy constructor
 	~Empty() {}                              // default destructor
 
 	// Have assignment operators return a reference to *this
-	Empty& operator=(const Empty&rhs)        // default assignment operator; return type is a reference to the current class
-	{
-		return *this;                        // return the left-hand object
-	}
+	//Empty& operator=(const Empty&rhs)        // default assignment operator; return type is a reference to the current class
+	//{
+	//	return *this;                        // return the left-hand object
+	//}
 
 	Empty& operator+=(const Empty& rhs)      // the convenction applies to: +=, -=, *= etc.
 	{
@@ -40,12 +52,11 @@ public:
 
 private:
 	// declare the copy constructor and the assignment operator yourself to prevent the compiler from creating its own
- 	// and declare them private so the user can't use them.
-	Empty(const Empty& rhs) {}
-	Empty& operator=(const Empty&rhs)
-	{
-		return *this;                        // return the left-hand object
-	}
+	// and declare them private so the user can't use them and don't define them so even friend or member functions
+	// can't call them (a common convention in such case is to ommit the names of the functions' parameters.
+	// Using a base class like Uncopyable is one way to do this.
+	//Empty(const Empty&);
+	//Empty& operator=(const Empty&);
 };
 
 int main()
