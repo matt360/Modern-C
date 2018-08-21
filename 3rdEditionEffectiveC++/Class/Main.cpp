@@ -37,6 +37,15 @@ public:
 	{
 		return *this;
 	}
+
+private:
+	// declare copy constructor and assignment operator private to prevent the compiler from
+	// creating its own and from using them.
+	Empty(const Empty& rhs) {}
+	Empty& operator=(const Empty&rhs)
+	{
+		return *this;                        // return the left-hand object
+	}
 };
 
 int main()
