@@ -15,11 +15,21 @@ is simple: declare a pure virtual destructor in the class you want to be
 abstract. Here’s an example:
 */
 
+// This class has a pure virtual function, so it’s abstract, and it has a virtual
+// destructor, so you won’t have to worry about the destructor problem.
+// There is one twist, however: you must provide a definition for the pure virtual destructor ->
 class AWOV                  // AWOV = "Abstract w/o Virtuals"
 {
 public:
 	virtual ~AWOV() = 0;    // declare pure virtual destructor
 };
+
+// The way destructors work is that the most derived class’s destructor
+// is called first, then the destructor of each base class is called.
+// Compilers will generate a call to ~AWOV from its derived classes’ destructors,
+// so you have to be sure to provide a body for the function. If you don’t,
+// the linker will complain.
+AWOV::~AWOV() {}            // -> definition of pure virtual dtor
 
 int main()
 {
