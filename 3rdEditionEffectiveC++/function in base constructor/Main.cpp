@@ -32,12 +32,13 @@ public:
 
 private:
 	static std::string staticLogInfo;
+
 	static const std::string& createLogString(const std::string& logInfo) {
 		staticLogInfo = logInfo;
 		return staticLogInfo;
 	};
-};
 
+};
 std::string BuyTransaction::staticLogInfo = "";
 
 class SellTransaction : public Transaction {           // derived class
@@ -50,11 +51,13 @@ public:
 
 private:
 	static std::string staticLogInfo;
+
 	static const std::string& createLogString(const std::string& logInfo) {
 		staticLogInfo = logInfo;
 		return staticLogInfo;
 	};
 };
+
 
 int main()
 {
