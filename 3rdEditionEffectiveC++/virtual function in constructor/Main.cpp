@@ -2,6 +2,13 @@
 #include <string>
 #include <vector>
 
+/*
+make sure that
+none of your constructors or destructors call virtual functions on the
+object being created or destroyed and that all the functions they call
+obey the same constraint.
+*/
+
 class Transaction {							   // base class for all transactions
 public:
 	Transaction();
