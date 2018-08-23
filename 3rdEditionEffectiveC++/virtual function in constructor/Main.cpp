@@ -6,6 +6,9 @@ class Transaction {							   // base class for all transactions
 public:
 	Transaction();
 	virtual void logTransaction() const = 0;   // make type-dependent log entry
+	void init() {
+		logTransaction();                      // as final action, log this transaction
+	};
 
 	// ...
 
@@ -14,18 +17,18 @@ public:
 Transaction::Transaction()		               // implementation of base class actor
 {
 	// ...
-	logTransaction();                          // as final action, log this transaction
+	init();
 }
 
 class BuyTransaction : public Transaction {    // derived class
 public:
-	virtual void logTransaction() const;       // how to log transactions of this type
+	virtual void logTransaction() const {};    // how to log transactions of this type
 	// ...
 };
 
 class SellTransaction : public Transaction {   // derived class
 public:
-	virtual void logTransaction() const;       // how to log transactions of this type
+	virtual void logTransaction() const {};    // how to log transactions of this type
 	// ...
 };
 
