@@ -27,6 +27,8 @@ p. 42 - Chapter 2 - Item 7 - Virtual Table Pointer - Virtual Table - Virtual Fun
 		To avoid undesired size bloating declare a virtual destructor in a class only if that class contains at least
 		one virtual function.
 
+p. 50 - An object doesn’t become a derived class object until execution of a derived class constructor begins.
+
 
 p. 89 - If you peek under the hood of a C++ compiler, you'll find that references are typically implemented as pointers,
 		so passing something by reference usually means really possing a pointer.
