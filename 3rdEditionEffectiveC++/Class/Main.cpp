@@ -59,12 +59,36 @@ private:
 	//Empty& operator=(const Empty&);
 };
 
+// Modern singleton
+class ModernUncopyable
+{
+public:
+	ModernUncopyable() {}
+
+	static ModernUncopyable& getInstance()
+	{
+		static ModernUncopyable mu;
+		return mu;
+	}
+
+public:
+	ModernUncopyable(const ModernUncopyable&) = delete;
+	void operator=(const ModernUncopyable&) = delete;
+};
+
 int main()
 {
 	Empty e1;
 
 	Empty e2(e1);
 	e2 = e1;
+
+	ModernUncopyable mu1;
+	ModernUncopyable mu2;
+
+	ModernUncopyable mu1(mu2);
+
+	mu1 = mu2;
 
 	std::cin.get();
 }
