@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 /*
 make sure that
@@ -17,7 +16,7 @@ public:
 	};
 };
 
-Transaction::Transaction(const std::string& logInfo)		                       // implementation of base class actor
+Transaction::Transaction(const std::string& logInfo)   // implementation of base class actor
 {
 	std::cout << "\nTransaction constructor called!\n";
 	logTransaction(logInfo);
@@ -31,7 +30,7 @@ public:
 	}
 
 private:
-	static std::string staticLogInfo;
+	inline static std::string staticLogInfo;
 
 	static const std::string& createLogString(const std::string& logInfo) {
 		staticLogInfo = logInfo;
@@ -39,18 +38,17 @@ private:
 	};
 
 };
-std::string BuyTransaction::staticLogInfo = "";
 
 class SellTransaction : public Transaction {           // derived class
 public:
 	SellTransaction(const std::string& logInfo) :
-		Transaction(logInfo) {
+		Transaction(createLogString(logInfo)) {
 		std::cout << "\nSellTransaction constructor called!\n";
 	}
 
 
 private:
-	static std::string staticLogInfo;
+	inline static std::string staticLogInfo;
 
 	static const std::string& createLogString(const std::string& logInfo) {
 		staticLogInfo = logInfo;
