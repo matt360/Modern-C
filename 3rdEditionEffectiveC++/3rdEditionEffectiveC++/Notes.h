@@ -29,6 +29,8 @@ p. 42 - Chapter 2 - Item 7 - Virtual Table Pointer - Virtual Table - Virtual Fun
 
 p. 50 - An object doesn’t become a derived class object until execution of a derived class constructor begins.
 
+p. 56 - Instruction prefetching, caching, and pipelining increase runtime speed.
+
 
 p. 89 - If you peek under the hood of a C++ compiler, you'll find that references are typically implemented as pointers,
 		so passing something by reference usually means really possing a pointer.

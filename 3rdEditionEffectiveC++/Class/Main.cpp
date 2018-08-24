@@ -72,8 +72,15 @@ public:
 	}
 
 public:
+	// C++ 11 way of deleting the methods we don't want.
 	ModernUncopyable(const ModernUncopyable&) = delete;
-	void operator=(const ModernUncopyable&) = delete;
+	void operator=(const ModernUncopyable&)   = delete;
+
+	// Note: Scott Meyers mentions in his Effective Modern
+    // C++ book, that deleted functions should generally
+	// be public as it results in better error messages
+	// due to the compilers behavior to check accessibility
+    // before deleted status
 };
 
 int main()
