@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "virtual function in constru
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "function in base constructor", "function in base constructor\function in base constructor.vcxproj", "{69494D6D-F110-4F67-A13A-970C691C0385}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operator=", "operator=\operator=.vcxproj", "{B85B19ED-68D5-477C-9DDE-FAA45565FF54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{69494D6D-F110-4F67-A13A-970C691C0385}.Release|x64.Build.0 = Release|x64
 		{69494D6D-F110-4F67-A13A-970C691C0385}.Release|x86.ActiveCfg = Release|Win32
 		{69494D6D-F110-4F67-A13A-970C691C0385}.Release|x86.Build.0 = Release|Win32
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Debug|x64.ActiveCfg = Debug|x64
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Debug|x64.Build.0 = Debug|x64
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Debug|x86.ActiveCfg = Debug|Win32
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Debug|x86.Build.0 = Debug|Win32
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Release|x64.ActiveCfg = Release|x64
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Release|x64.Build.0 = Release|x64
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Release|x86.ActiveCfg = Release|Win32
+		{B85B19ED-68D5-477C-9DDE-FAA45565FF54}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

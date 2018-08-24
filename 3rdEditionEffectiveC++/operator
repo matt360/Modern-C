@@ -1,0 +1,6 @@
+﻿  Main.cpp
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(22): error C2511: 'Widget &Widget::operator =(Widget)': overloaded member function not found in 'Widget'
+  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(9): note: see declaration of 'Widget'
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(23): error C2352: 'Widget::swap': illegal call of non-static member function
+  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(10): note: see declaration of 'Widget::swap'
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(24): error C2671: 'Widget::=': static member functions do not have 'this' pointers
