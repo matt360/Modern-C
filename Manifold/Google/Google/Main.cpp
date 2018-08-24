@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-#include <array>
 #include <unordered_set>
 
 bool HasPairWithSum(const std::vector<int>& data, int sum)
@@ -11,7 +10,11 @@ bool HasPairWithSum(const std::vector<int>& data, int sum)
 
 	for (int value : data)
 	{
-		// check if I have seen the value
+		// check if I have seen the value.
+		// set.find(value) returns an iterator to the value equal to `value`.
+		// If there is no such value it returns the end iterator,
+		// so if (set.find(value) != set.end()) essentially means:
+		// "if value has been found in set"
 		if (set.find(value) != set.end())
 		{
 			return true;
