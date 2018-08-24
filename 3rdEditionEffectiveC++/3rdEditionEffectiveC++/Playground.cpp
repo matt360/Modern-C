@@ -1,38 +1,32 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <unordered_set>
 
-class Transaction {							   // base class for all transactions
-public:
-	Transaction();
-	virtual void logTransaction() const = 0;   // make type-dependent log entry
-
-	// ...
-
-};
-
-Transaction::Transaction()		               // implementation of base class actor
+bool HasPairWithSum(const std::vector<int>& data, int sum)
 {
-	// ...
-	logTransaction();                          // as final action, log this transaction
+	std::unordered_set<int> set;  // complements
+
+	for (int value : data)
+	{
+		// check if I have seen the value
+		if (set.find(value) != set.end())
+		{
+			return true;
+		}
+
+		set.insert(sum - value);
+	}
+
+	return false;
 }
-
-class BuyTransaction : public Transaction {    // derived class
-public:
-	virtual void logTransaction() const;       // how to log transactions of this type
-	// ...
-};
-
-class SellTransaction : public Transaction {   // derived class
-public:
-	virtual void logTransaction() const;       // how to log transactions of this type
-	// ...
-};
 
 int main()
 {
-	BuyTransaction b;
+	std::vector<int> a{ 1, 2, 3, 9 };
+	std::vector<int> b{ 1, 2, 3, 6 };
 
+	HasPairWithSum(a, 8) ? std::cout << "true\n" : std::cout << "false\n";
+	HasPairWithSum(b, 8) ? std::cout << "true\n" : std::cout << "false\n";
 
 	std::cin.get();
 }
