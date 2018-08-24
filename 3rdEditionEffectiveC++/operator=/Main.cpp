@@ -1,4 +1,4 @@
-#include <iostream>
+Ôªø#include <iostream>
 #include <string>
 #include <vector>
 
@@ -21,13 +21,13 @@ Widget& Widget::operator=(const Widget& rhs)
 }
 
 // Happily, making operator= exception - safe typically renders it selfassignment -
-// safe, too.As a result, itís increasingly common to deal
+// safe, too.As a result, it‚Äôs increasingly common to deal
 // with issues of self - assignment by ignoring them, focusing instead on
 // achieving exception safety.Item 29 explores exception safety in depth,
 // but in this Item, it suffices to observe that in many cases, a careful
 // ordering of statements can yield exception - safe(and self - assignmentsafe)
 // code.Here, for example, we just have to be careful not to delete
-// pb until after weíve copied what it points to :
+// pb until after we‚Äôve copied what it points to :
 Widget& Widget::operator=(const Widget& rhs)
 {
 	Bitmap *pOrig = pb;
@@ -37,9 +37,9 @@ Widget& Widget::operator=(const Widget& rhs)
 
 // An alternative to manually ordering statements in operator= to make
 // sure the implementation is both exception - and self - assignment - safe
-// is to use the technique known as ìcopy and swap.î This technique is
-// closely associated with exception safety, so itís described in Item 29.
-// However, itís a common enough way to write operator= that itís worth
+// is to use the technique known as ‚Äúcopy and swap.‚Äù This technique is
+// closely associated with exception safety, so it‚Äôs described in Item 29.
+// However, it‚Äôs a common enough way to write operator= that it‚Äôs worth
 // seeing what such an implementation often looks like :
 Widget& Widget::operator=(const Widget& rhs)
 {
@@ -48,9 +48,14 @@ Widget& Widget::operator=(const Widget& rhs)
 	return *this;
 }
 
-// A variation on this theme takes advantage of the facts that(1) a classís
+// A variation on this theme takes advantage of the facts that(1) a class‚Äôs
 // copy assignment operator may be declared to take its argument by
-// value and (2) passing something by value makes a copy of it
+// value and (2) passing something by value makes a copy of it.
+
+// Personally, I worry that this approach sacrifices clarity at the altar of
+// cleverness, but by moving the copying operation from the body of the
+// function to construction of the parameter, it‚Äôs a fact that compilers
+// can sometimes generate more efficient code.
 Widget& Widget::operator=(Widget rhs)
 {
 	swap(rhs);
@@ -59,8 +64,12 @@ Widget& Widget::operator=(Widget rhs)
 
 int main()
 {
-
-
+	// Things to Remember
+	// ‚ú¶ Make sure operator= is well - behaved when an object is assigned to
+	// itself.Techniques include comparing addresses of source and target
+	// objects, careful statement ordering, and copy - and-swap.
+	// ‚ú¶ Make sure that any function operating on more than one object behaves
+	// correctly if two or more of the objects are the same.
 
 	std::cin.get();
 }
