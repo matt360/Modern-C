@@ -10,7 +10,7 @@ public:
 	Widget(int) {}
 	int x{ 0 };  // fine, x's default value is 0
 	int y = 0;   // also fine
-	//int z(0);    // error!
+	int z(0);    // error!
 
 	// On the other hand, uncopyable objects (e.g., std::atomics — see Item 40) may be
 	// initialized using braces or parentheses, but not using “ = ”:
@@ -40,7 +40,7 @@ int main()
 
 	int z{ 0 };            // initializer is in braces
 
-	//int z = { 0 };         // initializer uses "=" and braces. C++ usally treats it the same as the braces-only version.
+	int z = { 0 };         // initializer uses "=" and braces. C++ usally treats it the same as the braces-only version.
 
 
 	// The “confusing mess” lobby points out that the use of an equals sign for initialization
@@ -49,11 +49,11 @@ int main()
 	// types, it’s important to distinguish initialization from assignment, because
 	// different function calls are involved:
 
-	//Widget w1;          // call default constructor
+	Widget w1;          // call default constructor
 
-	//Widget w2 = w1;     // not an assignment; calls copy ctor
+	Widget w2 = w1;     // not an assignment; calls copy ctor
 
-	//w1 = w2;            // an assignment; calls copy operator=
+	w1 = w2;            // an assignment; calls copy operator=
 
 	// Another noteworthy characteristic of braced initialization is its immunity to C++’s
 	// most vexing parse.A side effect of C++’s rule that anything that can be parsed as a
@@ -73,6 +73,15 @@ int main()
 	Widget w3{}; // // calls Widget ctor with no args
 
 	std::vector<int> v{ 1, 3, 5 };    // v's initial content is 1, 3, 5
+
+	std::vector<int> v1(10, 20);// use non-std::initializer_list
+								// ctor: create 10-element
+								// std::vector, all elements have
+								// value of 20
+
+	std::vector<int> v2{ 10, 20 };// use std::initializer_list ctor:
+							      // create 2-element std::vector,
+							      // element values are 10 and 20
 
 	std::cin.get();
 }
