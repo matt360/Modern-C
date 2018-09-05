@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-class Investment { }; // root class of hierarchy of investment types
+class Investment { public: bool b : 1; }; // root class of hierarchy of investment types
 
 Investment* createInvestment(); // return ptr to dynamically allocated
                                 // object in the Investment hierarchy;
@@ -11,8 +11,9 @@ Investment* createInvestment(); // return ptr to dynamically allocated
 
 int main()
 {
+	Investment i{};	
 
-
+	std::cout << i.b;
 
 	std::cin.get();
 }
