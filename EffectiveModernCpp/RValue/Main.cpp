@@ -27,13 +27,13 @@ void processVals(const T& param)
 
 };
 
-void someFunc(Widget w) {};
+void someFunc(Widget w) {};  // w is the parameter of the function
 
 int main()
 {
 	Widget wid;
 
-	someFunc(wid);
+	someFunc(wid);   // wid is the argument of the function
 
 	someFunc(std::move(wid));
 
