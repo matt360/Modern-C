@@ -4,10 +4,10 @@
 
 template<typename C, typename V>
 void findAndInsert(C& container,              // in container, find
-	const V& targetVal,        // first occurence
-	const V& insertVal)        // of targetVal, then
+	const V& targetVal,                       // first occurence
+	const V& insertVal)                       // of targetVal, then
 {                                             // insert insertVal
-	using std::cbegin;                            // there                           
+	using std::cbegin;                        // there                           
 	using std::cend;
 
 	auto it = std::find(cbegin(container), cend(constainer), targetVal);

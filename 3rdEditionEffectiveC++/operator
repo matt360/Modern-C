@@ -1,6 +1,10 @@
 ﻿  Main.cpp
-c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(22): error C2511: 'Widget &Widget::operator =(Widget)': overloaded member function not found in 'Widget'
-  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(9): note: see declaration of 'Widget'
-c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(23): error C2352: 'Widget::swap': illegal call of non-static member function
-  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(10): note: see declaration of 'Widget::swap'
-c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(24): error C2671: 'Widget::=': static member functions do not have 'this' pointers
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(24): error C2600: 'Widget::operator =': cannot define a compiler-generated special member function (must be declared in the class first)
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(41): error C2600: 'Widget::operator =': cannot define a compiler-generated special member function (must be declared in the class first)
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(58): error C2600: 'Widget::operator =': cannot define a compiler-generated special member function (must be declared in the class first)
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(86): error C2600: 'Widget::operator =': cannot define a compiler-generated special member function (must be declared in the class first)
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(101): error C2511: 'Widget &Widget::operator =(Widget)': overloaded member function not found in 'Widget'
+  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(13): note: see declaration of 'Widget'
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(102): error C2352: 'Widget::swap': illegal call of non-static member function
+  c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(14): note: see declaration of 'Widget::swap'
+c:\users\zarembamat\documents\moderncpp\3rdeditioneffectivec++\operator=\main.cpp(103): error C2671: 'Widget::=': static member functions do not have 'this' pointers
