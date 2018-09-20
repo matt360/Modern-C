@@ -1,7 +1,8 @@
-#include <iostream>
-#include <ios>
-#include <cassert>
+// Created by Mateusz Zaremba
+
 #include "boost/multi_array.hpp"
+#include <iostream>
+#include <cassert>
 
 int main()
 {
@@ -15,14 +16,14 @@ int main()
 	for (index i = 0; i != 3; ++i)
 		for (index j = 0; j != 4; ++j)
 			for (index k = 0; k != 2; ++k)
-			{ A[i][j][k] = values++; printf("%lf\n", A[i][j][k]); }
+				A[i][j][k] = values++;
 
 	// Verify values
 	int verify = 0;
 	for (index i = 0; i != 3; ++i)
 		for (index j = 0; j != 4; ++j)
 			for (index k = 0; k != 2; ++k)
-			assert(A[i][j][k] == verify++);
+				assert(A[i][j][k] == verify++);
 
-	std::cin.get();
+	
 }
