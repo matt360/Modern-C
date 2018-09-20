@@ -14,8 +14,13 @@ struct B : public A {
 };
 
 int main() {
-	B b;
-	b.bar();
+	{
+		B b;
+		b.bar();
+	}
+
+	std::cout << 1["ABC"];
+	
 
 	std::cin.get();
 }
