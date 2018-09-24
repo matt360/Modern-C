@@ -15,5 +15,9 @@ int main()
 	const int qux = 42;
 	int* quux = &qux;
 
+	char const * c = "char";
+	const char * wc = "wchar";
+	
+
 	std::cin.get();
 }
