@@ -1,6 +1,5 @@
 // Created by Mateusz Zaremba
 
-
 #include <iostream>
 #include <exception>
 
