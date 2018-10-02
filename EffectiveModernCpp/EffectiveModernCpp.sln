@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Smart Pointers (Chapter 4)"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Smart Pointers (Chapter 4, Item 18, Page 120)", "Smart Pointers (Chapter 4, Item 18, Page 120)\Smart Pointers (Chapter 4, Item 18, Page 120).vcxproj", "{4BEAF044-9754-4C49-8ED4-C2A2AF03A4E9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Smart Pointers C++14 (Chapter 4, Item 18, Page 122)", "Smart Pointers C++14 (Chapter 4, Item 18, Page 122)\Smart Pointers C++14 (Chapter 4, Item 18, Page 122).vcxproj", "{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{4BEAF044-9754-4C49-8ED4-C2A2AF03A4E9}.Release|x64.Build.0 = Release|x64
 		{4BEAF044-9754-4C49-8ED4-C2A2AF03A4E9}.Release|x86.ActiveCfg = Release|Win32
 		{4BEAF044-9754-4C49-8ED4-C2A2AF03A4E9}.Release|x86.Build.0 = Release|Win32
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Debug|x64.ActiveCfg = Debug|x64
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Debug|x64.Build.0 = Debug|x64
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Debug|x86.Build.0 = Debug|Win32
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Release|x64.ActiveCfg = Release|x64
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Release|x64.Build.0 = Release|x64
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Release|x86.ActiveCfg = Release|Win32
+		{BC3FA5EA-E0B2-4C74-8F35-7AFB81F85DBF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

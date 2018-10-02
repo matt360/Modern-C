@@ -22,13 +22,13 @@ void makeLogEntry(Investment* pInvestment)
 
 auto delInvmt = [](Investment* pInvestment)   // custom
 {                                             // deleter
-	makeLogEntry(pInvestment);                // (a lambda
+	makeLogEntry(pInvestment);                // (as stateless lambda
 	delete pInvestment;                       // expression)
 };
 
-template<typename... Ts>
-std::unique_ptr<Investment, decltype(delInvmt)>
-makeInvestment(Ts&&... params)
+template<typename... Ts>                         // return type
+std::unique_ptr<Investment, decltype(delInvmt)>  // has size of
+makeInvestment(Ts&&... params)                   // Investment*
 {
 	std::unique_ptr<Investment, decltype(delInvmt)>  // ptr to be
 	pInv(nullptr, delInvmt);                         // returned
