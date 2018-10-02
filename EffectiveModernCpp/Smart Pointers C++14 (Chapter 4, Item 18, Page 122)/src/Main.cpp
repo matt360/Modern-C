@@ -67,7 +67,7 @@ makeInvestment2(Ts&&... params, void (*)(Investment*))          // plus at least
 		delete pInvestment;
 	};
 
-	std::unique_ptr<Investment, decltype(delInvmt)>  // ptr to be
+	std::unique_ptr<Investment, decltype(delInvmt)>      // ptr to be
 		pInv(nullptr, delInvmt);                         // returned
 
 	if (1 /* a Stock object should be created */)
@@ -91,6 +91,8 @@ int main()
 	{
 		makeInvestment();
 	}
+	
+	std::shared_ptr<Investment> sp = makeInvestment(); 
 
 	std::cin.get();
 }

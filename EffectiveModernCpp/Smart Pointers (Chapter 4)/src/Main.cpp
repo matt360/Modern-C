@@ -23,12 +23,14 @@ makeInvestment(Ts&&... params) // from the given args
 
 int main() 
 {
-	std::unique_ptr<Investment> i;
 	{
 		auto pInvestment =     // pInvestment is of type
-			makeInvestment(i, i);  // std::unique_ptr<Investment>
+			makeInvestment();  // std::unique_ptr<Investment>
 							   
 	}                          // destroy *pInvestment
+
+	std::shared_ptr<Investment> sp = // converts std::unique_ptr
+		makeInvestment();            // to std::shared_ptr
 
 	std::cin.get();
 }
