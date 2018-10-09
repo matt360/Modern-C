@@ -7,6 +7,11 @@ void f(int x)
 	std::cout << x << i;
 }
 
+int Foo() const
+{
+	
+};
+
 int main()
 {
 	i = 3;
