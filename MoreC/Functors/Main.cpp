@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <algorithm>
 
 /*
@@ -54,4 +55,10 @@ int main()
 
 
 	std::cin.get();
+=======
+
+int main()
+{
+	
+>>>>>>> c5aba22dac9649cc0e08daa42893c4ab0e3f3ba6
 }
