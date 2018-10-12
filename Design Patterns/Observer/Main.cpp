@@ -1,7 +1,5 @@
 #include <iostream>
 
-#define unlock(x) std::cout << "Achievement Unlocked!";
-
 enum Event { EVENT_ENTITY_FELL };
 enum Achievemnet { ACHIEVEMENT_FELL_OFF_BRIDGE };
 
@@ -38,10 +36,17 @@ public:
 			// Update heriIsOnBridge_...
 		}
 	}
+
+private:
+	void unlock(Achievemnet achievement)
+	{
+		// Unlock if not already unlocked...
+	}
+
+	bool heroIsOnBridge_;
 };
 
 int main()
 {
-	
 	
 }
