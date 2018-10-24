@@ -91,9 +91,14 @@ std::shared_ptr<int> spi(new int[1024]);             // same problem
 // tr1::shared_ptr is usually the better choice, because its behavior when
 // copied is intuitive.Copying ans auto_ptr sets it to null.
 
+struct test
+{
+	~test() { std::cout << "test::dtor" << std::endl; }
+};
+
 int main() 
 {
-	
+	std::unique_ptr<test[]> array(new test[2]);
 
 	std::cin.get();
 }

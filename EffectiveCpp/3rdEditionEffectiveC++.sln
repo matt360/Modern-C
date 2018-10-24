@@ -33,6 +33,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function Pointer Trick", "F
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Item 13 - Use objects to manage resources", "Item 13 - Use objects to manage resources\Item 13 - Use objects to manage resources.vcxproj", "{73D97B14-1DD1-4105-8BD6-81D84229DDBE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "18 Make interfaces easy to use correctly and hard to use incorrectly", "18 Make interfaces easy to use correctly and hard to use incorrectly\18 Make interfaces easy to use correctly and hard to use incorrectly.vcxproj", "{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -161,6 +163,14 @@ Global
 		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x64.Build.0 = Release|x64
 		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x86.ActiveCfg = Release|Win32
 		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x86.Build.0 = Release|Win32
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Debug|x64.ActiveCfg = Debug|x64
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Debug|x64.Build.0 = Debug|x64
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Debug|x86.ActiveCfg = Debug|Win32
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Debug|x86.Build.0 = Debug|Win32
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x64.ActiveCfg = Release|x64
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x64.Build.0 = Release|x64
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x86.ActiveCfg = Release|Win32
+		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
