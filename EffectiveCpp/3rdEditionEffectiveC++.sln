@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SubscriptingOperator", "Sub
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Function Pointer Trick", "Function Pointer Trick\Function Pointer Trick.vcxproj", "{16A3A35D-8014-4F5D-ABAE-57DEA95E97B7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Item 13 - Use objects to manage resources", "Item 13 - Use objects to manage resources\Item 13 - Use objects to manage resources.vcxproj", "{73D97B14-1DD1-4105-8BD6-81D84229DDBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{16A3A35D-8014-4F5D-ABAE-57DEA95E97B7}.Release|x64.Build.0 = Release|x64
 		{16A3A35D-8014-4F5D-ABAE-57DEA95E97B7}.Release|x86.ActiveCfg = Release|Win32
 		{16A3A35D-8014-4F5D-ABAE-57DEA95E97B7}.Release|x86.Build.0 = Release|Win32
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Debug|x64.ActiveCfg = Debug|x64
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Debug|x64.Build.0 = Debug|x64
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Debug|x86.ActiveCfg = Debug|Win32
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Debug|x86.Build.0 = Debug|Win32
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x64.ActiveCfg = Release|x64
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x64.Build.0 = Release|x64
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x86.ActiveCfg = Release|Win32
+		{73D97B14-1DD1-4105-8BD6-81D84229DDBE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
