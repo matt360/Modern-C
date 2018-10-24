@@ -13,7 +13,12 @@ Investment* createInvestment()          // return ptr to dynamically allocated
 	Investment* pInv = new Investment;  // the caller must delete it
 	return pInv;                        // (parameters omitted for simplicity)
 }
-								   
+	
+std::shared_ptr<Investment> createSharedPointerInvestment()
+{
+	return std::shared_ptr<Investment>(new Investment);
+}
+
 void f()
 {
 	Investment *pInv = createInvestment();    // call factory function
@@ -90,15 +95,29 @@ std::shared_ptr<int> spi(new int[1024]);             // same problem
 // ✦ Two commonly useful RAII classes are tr1::shared_ptr and auto_ptr.
 // tr1::shared_ptr is usually the better choice, because its behavior when
 // copied is intuitive.Copying ans auto_ptr sets it to null.
+// 
+std::shared_ptr<Investment> bestRCSP()
+{
+	return std::shared_ptr<Investment>(createInvestment());
+}
 
 struct test
 {
 	~test() { std::cout << "test::dtor" << std::endl; }
 };
 
+void getRidOfInvestment(Investment* pInv)
+{
+	delete pInv;
+}
+
 int main() 
 {
 	std::unique_ptr<test[]> array(new test[2]);
+
+	std::shared_ptr<Investment> pInv = bestRCSP();
+
+	std::shared_ptr<Investment> pInv(nullptr, getRidOfInvestment());
 
 	std::cin.get();
 }
