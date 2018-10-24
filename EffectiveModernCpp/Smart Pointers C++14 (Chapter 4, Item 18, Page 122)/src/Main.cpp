@@ -34,6 +34,7 @@ makeInvestment(Ts&&... params)
 	std::unique_ptr<Investment, decltype(delInvmt)>  // ptr to be
 		pInv(nullptr, delInvmt);                         // returned
 
+	// 1, 0, 0 in 'if' and 'else if' statements is just for testing
 	if (1 /* a Stock object should be created */)
 	{
 		pInv.reset(new Stock(std::forward<Ts>(params)...));
