@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Item 13 - Use objects to ma
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "18 Make interfaces easy to use correctly and hard to use incorrectly", "18 Make interfaces easy to use correctly and hard to use incorrectly\18 Make interfaces easy to use correctly and hard to use incorrectly.vcxproj", "{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Item 19 Treat class design as type design", "Item 19 Treat class design as type design\Item 19 Treat class design as type design.vcxproj", "{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x64.Build.0 = Release|x64
 		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x86.ActiveCfg = Release|Win32
 		{AAE3D11D-C28B-4880-8FBE-1123C85F22E0}.Release|x86.Build.0 = Release|Win32
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Debug|x64.ActiveCfg = Debug|x64
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Debug|x64.Build.0 = Debug|x64
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Debug|x86.ActiveCfg = Debug|Win32
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Debug|x86.Build.0 = Debug|Win32
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Release|x64.ActiveCfg = Release|x64
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Release|x64.Build.0 = Release|x64
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Release|x86.ActiveCfg = Release|Win32
+		{15DE7BB3-DF57-44B2-B31A-E380CF60ED19}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
