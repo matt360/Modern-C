@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 
-typedef const T* Tcptr;
 class I
 {
 public:
@@ -26,6 +25,9 @@ int main()
 {
 	I ii;
 	int i = ii.foo(1);
+	int j = 0;
+	++j;
+	std::cout << j << std::endl;
 
 	std::cin.get();
 }
