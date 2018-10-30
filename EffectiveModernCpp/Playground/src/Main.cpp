@@ -21,12 +21,21 @@ public:
 	int j = 0;
 };
 
+struct C
+{
+	C& operator++(); // prefix
+	const C operator++(int); // postfix
+
+private: 
+	int i;
+};
+
 int main() 
 {
 	I ii;
 	int i = ii.foo(1);
 	int j = 0;
-	++j;
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++j;
 	std::cout << j << std::endl;
 
 	std::cin.get();
