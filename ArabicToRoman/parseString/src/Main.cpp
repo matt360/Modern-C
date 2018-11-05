@@ -4,6 +4,7 @@
 #include <regex>
 
 /*
+	source: http://www.techiedelight.com/remove-whitespaces-string-cpp/
 	1. space ' '
 	2. line feed '\n'
 	3. carriage return '\r'
@@ -24,16 +25,18 @@ struct isSpace
 {
 	bool operator()(unsigned c)
 	{
-		return (c == ' ' || c == '\n' || c == '\r' ||
-			c == '\t' || c == '\v' || c == '\f');
+		return (c == ' ' ||
+			c == '\t'|| c== '\n');
 	}
 };
+// remove a specific white-space from a string using operator overloading
+//input.erase(std::remove_if(input.begin(), input.end(), isSpace()), input.end());
 
 int main()
 {
 	std::string input = R"(Ro;
 
-m"	a' n)";
+m"	a' 'n)";
 
 	/*for (auto& i : input)
 	{
@@ -50,15 +53,20 @@ m"	a' n)";
 			input.erase(std::remove(input.begin(), input.end(), ';'), input.end());
 		}
 	}*/
-	input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
-	input.erase(std::remove_if(input.begin(), input.end(), ::ispunct), input.end());
+	
+	// remove all white-spaces from a string
+	//input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+	// remove all punctuation sign from a string
+	//input.erase(std::remove_if(input.begin(), input.end(), ::ispunct), input.end());
+
+	// remove a specific white-space froma string using a lambda expression
 	/*input.erase(std::remove_if(input.begin(), input.end(),
 		[](char c) {
 			return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
 		}),
 		input.end());*/
 
-	//input.erase(std::remove_if(input.begin(), input.end(), isSpace()), input.end());
+	// remove all white-spaces from a string using regualr expression
 	/*std::regex r("\\s+");
 	input = std::regex_replace(input, r, "");*/
 
