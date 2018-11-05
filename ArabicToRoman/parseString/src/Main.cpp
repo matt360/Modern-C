@@ -38,32 +38,47 @@ int main()
 
 m"	a' 'n)";
 
-	/*for (auto& i : input)
-	{
-		if (i == '\'')
-		{
-			input.erase(std::remove(input.begin(), input.end(), '\''), input.end());
-		}
-		else if (i == '\"')
-		{
-			input.erase(std::remove(input.begin(), input.end(), '\"'), input.end());
-		}
-		else if (i == ';')
-		{
-			input.erase(std::remove(input.begin(), input.end(), ';'), input.end());
-		}
-	}*/
+	//for (auto& i : input)
+	//{
+	//	if (i == '\'')
+	//	{
+	//		input.erase(std::remove(input.begin(), input.end(), '\''), input.end());
+	//	}
+	//	else if (i == '\"')
+	//	{
+	//		input.erase(std::remove(input.begin(), input.end(), '\"'), input.end());
+	//	}
+	//	else if (i == ';')
+	//	{
+	//		input.erase(std::remove(input.begin(), input.end(), ';'), input.end());
+	//	}
+	//}
 	
 	// remove all white-spaces from a string
-	//input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+	input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
 	// remove all punctuation sign from a string
-	//input.erase(std::remove_if(input.begin(), input.end(), ::ispunct), input.end());
+	input.erase(std::remove_if(input.begin(), input.end(), ::ispunct), input.end());
 
-	// remove a specific white-space froma string using a lambda expression
-	/*input.erase(std::remove_if(input.begin(), input.end(),
-		[](char c) {
-			return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
-		}),
+	// remove a specific white-space from a string using a lambda expression
+	input.erase(
+		std::remove_if(
+			input.begin(), 
+			input.end(),
+			[](char c) 
+			{
+				return (c == ' ');
+			}),
+		input.end());
+
+	// remove more than one specific white-space from a string using a lambda expression
+	/*input.erase(
+		std::remove_if(
+			input.begin(), 
+			input.end(),
+			[](char c) 
+			{
+				return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
+			}),
 		input.end());*/
 
 	// remove all white-spaces from a string using regualr expression
