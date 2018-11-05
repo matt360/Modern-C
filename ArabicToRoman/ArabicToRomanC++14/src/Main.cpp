@@ -2,12 +2,6 @@
 #include <string>
 
 const std::initializer_list<std::pair<unsigned, std::string>> table {
-	{ 1000000, "m"  },
-	{  500000, "d"  },
-	{  100000, "c"  },
-	{   50000, "l"  },
-	{   10000, "x"  },
-	{    5000, "v"  },
 	{    1000, "M"  },
 	{     900, "CM" },
 	{     500, "D"  },
@@ -39,7 +33,7 @@ auto toRoman(unsigned arabic)
 
 int main()
 {
-	auto i = toRoman(5001);
+	auto i = toRoman(1001);
 	std::cout << i;
 
 	std::cin.get();
