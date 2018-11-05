@@ -38,23 +38,26 @@ int main()
 
 m"	a' 'n)";
 
-	// if you want to catch a character and replace it with another character
-	for (auto& i : input)
+	// if found "Ro" in the input strin
+	if (size_t found_position = input.find("Ro"); found_position != std::string::npos)
 	{
-		if (i == '\'')
-		{
-			//input.erase(std::remove(input.begin(), input.end(), '\''), input.end());
-			i = 'k';
-		}
-		else if (i == '\"')
-		{
-			//input.erase(std::remove(input.begin(), input.end(), '\"'), input.end());
-		}
-		else if (i == ';')
-		{
-			//input.erase(std::remove(input.begin(), input.end(), ';'), input.end());
-		}
+		// do something...
 	}
+
+	input.replace(input.find("Ro"), sizeof("Ro"), "Co");
+
+	//// get characters into name
+	//std::string name;
+	//std::cout << "Please, enter your full name: ";
+	//std::getline(std::cin, name);
+	//std::cout << "Hello, " << name << "!\n";
+
+	//// remove all semicolons
+	//input.erase(std::remove(input.begin(), input.end(), ';'), input.end());
+	//// remove all double quotes
+	//input.erase(std::remove(input.begin(), input.end(), '\"'), input.end());
+	//// remove all single quotes
+	//input.erase(std::remove(input.begin(), input.end(), '\''), input.end());
 	
 	//// remove all white-spaces from a string
 	//input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
@@ -73,24 +76,55 @@ m"	a' 'n)";
 	//	input.end());
 
 	// remove more than one specific white-space from a string using a lambda expression
-	/*input.erase(
-		std::remove_if(
-			input.begin(), 
-			input.end(),
-			[](char c) 
-			{
-				return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
-			}),
-		input.end());*/
+	//input.erase(
+	//	std::remove_if(
+	//		input.begin(), 
+	//		input.end(),
+	//		[](char c) 
+	//		{
+	//			return (c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\v' || c == '\f');
+	//		}),
+	//	input.end());
 
 	// remove all white-spaces from a string using regualr expression
-	/*std::regex r("\\s+");
-	input = std::regex_replace(input, r, "");*/
+	//std::regex r("\\s+");
+	//input = std::regex_replace(input, r, "");
 
 	std::cout << input << std::endl;
+
+	std::string str;
+	std::string str2 = R"(Writing )";
+	std::string str3 = R"(print 10 and then 5 more)";
+
+	// used in the same order as described above:
+	str.append(str2);                       // "Writing "
+	str.append(str3, 6, 3);                   // "10 "
+	str.append("dots are cool", 5);          // "dots "
+	str.append("here: ");                   // "here: "
+	str.append(10u, '.');                    // ".........."
+	str.append(str3.begin() + 8, str3.end());  // " and then 5 more"
+	str.insert(2, "BOOM");
+	////str.append<int>(5, 0x2E);                // "....."
+
+	std::cout << str << '\n';
 
 	std::cin.get();
 }
 
-
+// Don't use
+// if you want to catch a character and replace it with another character
+// or insert multiple signs into a string
+//for (auto& i : input)
+//{
+//	if (i == '\'')
+//	{
+//		input.replace(i, sizeof(i), "firstSQ");
+//	}
+//	else if (i == '\"')
+//	{
+//	}
+//	else if (i == ';')
+//	{
+//	}
+//}
 
